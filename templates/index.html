@@ -38,9 +38,8 @@
                                         <i class="fas fa-user white-text"></i> Find Out if You'll Qualify</h3>
                                     <hr class="hr-light">
                                 </div>
-                                <!--Body-->
 
-                                <!-- Radio buttons for Gender -->
+                                <!-- Form Input: Gender -->
                                 <div class="form-group">
                                     <div id="genderButtons" class="form-check form-check-inline">
                                         <label class="button-label text-white" for="genderButtons">Gender:</label>
@@ -59,7 +58,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Radio buttons for marital status -->
+                                <!-- Form Input: Marital Status -->
                                 <div class="form-group">
                                     <div id="marriageButtons" class="form-check form-check-inline">
 
@@ -78,7 +77,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Radio buttons for self employment -->
+                                <!-- Form Input: Self Employment -->
                                 <div class="form-group">
                                     <div id="selfEmployedButtons" class="form-check form-check-inline">
                                         <label class="button-label text-white" for="selfEmployedButtons">Are you self
@@ -97,14 +96,11 @@
                                     </div>
                                 </div>
 
-
-
-                                <!-- Radio buttons for property area -->
-
+                                <!-- Form Input: Property Area -->
                                 <div class="form-group">
                                     <div id="propertyAreaButtons">
-
-                                        <label class="text-white" for="propertyAreaButtons">Where would you like to buy your home?</label>
+                                        <label class="text-white" for="propertyAreaButtons">Where would you like to buy
+                                            your home?</label>
                                         <div class="custom-control custom-radio text-white">
                                             <input type="radio" class="custom-control-input"
                                                 id="urbanPropertyAreaButton" name="propertyAreaRadios">
@@ -128,37 +124,55 @@
                                     </div>
                                 </div>
 
-
-
-
-                                <!-- Number of Dependents -->
-                                <div id="numberOfDependents">
-                                    <label class="text-white" for="numberOfDependents">How many dependents do
-                                        you
-                                        have?</label>
-                                    <div class="def-number-input number-input safari_only">
-                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                            class="minus"></button>
-                                        <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                            class="plus"></button>
+                                <!-- Form Input: Number of Dependents -->
+                                <div class="form-group">
+                                    <div id="numberOfDependents" class="form-check form-check-inline">
+                                        <label class="text-white" for="numberOfDependents">How many dependents do
+                                            you
+                                            have?</label>
+                                        <div class="def-number-input number-input safari_only">
+                                            <button
+                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                class="minus"></button>
+                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                            <button
+                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                class="plus"></button>
+                                        </div>
                                     </div>
                                 </div>
 
-
-
-
-
-
-                                <div class="md-form">
-                                    <i class="fas fa-lock prefix white-text active"></i>
-                                    <input type="password" id="form4" class="white-text form-control">
-                                    <label for="form4">Education</label>
+                                <!-- Form Input: Education Level -->
+                                <div class="form-group">
+                                    <div id="educationLevel" class="form-check form-check-inline">
+                                        <label class="text-white" for="sel1">Education Level</label>
+                                        <select class="form-control" id="sel1">
+                                            <option value="" disabled selected>select your education level</option>
+                                            <option>Graduate</option>
+                                            <option>Under Graduate</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="md-form">
-                                    <i class="fas fa-lock prefix white-text active"></i>
-                                    <input type="password" id="form4" class="white-text form-control">
-                                    <label for="form4">Credit History</label>
+
+                                <!-- Form Input: Credit History -->
+                                <div class="form-group">
+                                    <div id="creditHistory" class="form-check form-check-inline">
+                                        <label class="text-white" for="sel1">Credit History</label>
+                                        <select class="form-control" id="sel1">
+                                            <option value="" disabled selected>select your credit history</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Form Input: Total Income -->
+                                <div class="form-group">
+                                    <div id="totalIncome" class="form-check form-check-inline">
+                                        <label class="text-white" for="totalIncome">Gross Annual Income</label>
+                                        <input class="form-control" type="text"
+                                            placeholder="(enter total income of applicant & co-applicant)">
+                                    </div>
                                 </div>
 
 
