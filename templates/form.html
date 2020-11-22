@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Project 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <!-- NOTE: The template for this page uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image -->
+
+        <!-- Full Page Intro -->
+        <div class="view"
+            style="background-image: url('https://images.unsplash.com/photo-1603517432006-7127536be848?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+            <!-- Content -->
+            <div class="container">
+                <!--Grid row-->
+                <div class="row mt-5">
+
+                    <!--Grid column-->
+                    <div class="col-md-6 col-xl-5 mb-4">
+                        <!--Form-->
+                        <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="card-body">
+                                <!--Header-->
+                                <div class="text-center">
+                                    <h3 class="white-text">
+                                        <i class="fas fa-user white-text"></i> Find Out if You'll Qualify</h3>
+                                    <hr class="hr-light">
+                                </div>
+
+                                <!-- Step 1 of Form -->
+                                <div class="tab">
+                                    <h5 class="form-header">Step 1: Your Personal Details</h5>
+                                    <!-- Form Input: Gender -->
+                                    <div class="form-group">
+                                        <div id="genderButtons" class="form-check form-check-inline">
+                                            <label class="button-label text-white" for="genderButtons">Gender:</label>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input" id="femaleRadioButton"
+                                                    name="genderRadios">
+                                                <label class="custom-control-label"
+                                                    for="femaleRadioButton">Female</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input" id="maleRadioButton"
+                                                    name="genderRadios">
+                                                <label class="custom-control-label" for="maleRadioButton">Male</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Form Input: Marital Status -->
+                                    <div class="form-group">
+                                        <div id="marriageButtons" class="form-check form-check-inline">
+
+                                            <label class="text-white" for="marriageButtons">Are you married?</label>
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input" id="yesMarriageButton"
+                                                    name="marriageRadios">
+                                                <label class="custom-control-label" for="yesMarriageButton">Yes</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input" id="noMarriageButton"
+                                                    name="marriageRadios">
+                                                <label class="custom-control-label" for="noMarriageButton">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Form Input: Self Employment -->
+                                    <div class="form-group">
+                                        <div id="selfEmployedButtons" class="form-check form-check-inline">
+                                            <label class="button-label text-white" for="selfEmployedButtons">Are you
+                                                self
+                                                employed?</label>
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="yesSelfEmployedButton" name="selfEmployedRadios">
+                                                <label class="custom-control-label"
+                                                    for="yesSelfEmployedButton">Yes</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="noSelfEmployedButton" name="selfEmployedRadios">
+                                                <label class="custom-control-label"
+                                                    for="noSelfEmployedButton">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Form Input: Education Level -->
+                                    <div class="form-group">
+                                        <div id="educationButtons" class="form-check form-check-inline">
+                                            <label class="button-label text-white" for="educationButtons">Did you graduate high school?</label>
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="graduateButton" name="educationRadios">
+                                                <label class="custom-control-label"
+                                                    for="graduateButton">Yes</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="notGraduateButton" name="educationRadios">
+                                                <label class="custom-control-label"
+                                                    for="notGraduateButton">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Form Input: Number of Dependents -->
+                                    <div class="form-group">
+                                        <div id="numberOfDependents" class="form-check form-check-inline">
+                                            <label class="text-white" for="numberOfDependents">How many dependents do
+                                                you
+                                                have?</label>
+                                            <div class="def-number-input number-input safari_only">
+                                                <button
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                    class="minus"></button>
+                                                <input class="quantity" min="0" name="quantity" value="0" type="number">
+                                                <button
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                    class="plus"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Form Input: Credit History -->
+                                    <div class="form-group">
+                                        <div id="creditHistory" class="form-check form-check-inline">
+                                            <label class="text-white" for="sel1">Credit History</label>
+                                            <select class="form-control" id="sel1">
+                                                <option value="" disabled selected>select your credit history</option>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Form Input: Total Income -->
+                                    <div class="form-group">
+                                        <div id="totalIncome" class="form-check form-check-inline needs-validation">
+                                            <label class="text-white" for="totalIncome">Gross Annual Income</label>
+                                            <input class="form-control" type="text"
+                                                placeholder="(include co-applicant's income)" required>
+ 
+                                        </div>
+                                    </div>
+                                </div> <!-- End of Step 1 of the form -->
+
+                                <div class="tab">
+                                    <h5 class="form-header">Step 2: Your Loan Details</h5>
+
+                                    <!-- Begin Step 2 of the form -->
+                                    <!-- Form Input: Property Area -->
+                                    <div class="form-group">
+                                        <div id="propertyAreaButtons">
+                                            <label class="text-white" for="propertyAreaButtons">Where would you like to
+                                                buy
+                                                your home?</label>
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="urbanPropertyAreaButton" name="propertyAreaRadios">
+                                                <label class="custom-control-label"
+                                                    for="urbanPropertyAreaButton">Urban</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="semiUrbanPropertyAreaButton" name="propertyAreaRadios">
+                                                <label class="custom-control-label"
+                                                    for="semiUrbanPropertyAreaButton">Semi
+                                                    Urban</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="ruralPropertyAreaButton" name="propertyAreaRadios">
+                                                <label class="custom-control-label"
+                                                    for="ruralPropertyAreaButton">Rural</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Form Input: Loan Amount -->
+                                    <div class="form-group">
+                                        <div id="loanAmount" class="form-check form-check-inline">
+                                            <label class="text-white" for="loanAmount">Loan Amount</label>
+                                            <input class="form-control" type="text" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Form Input: Term of Loan -->
+                                    <div class="form-group">
+                                        <div id="termofLoan" class="form-check form-check-inline">
+                                            <label class="text-white" for="termofLoan">Term of Loan (months)</label>
+                                            <input class="form-control" type="text" placeholder="">
+                                        </div>
+                                    </div>
+                              </div>
+
+
+                                <div style="overflow:auto;">
+                                    <div style="float:right;">
+                                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    </div>
+                                </div>
+
+                                <!-- Circles which indicates the steps of the form: -->
+                                <div style="text-align:center;margin-top:40px;">
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.Form-->
+                    </div>
+
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Content -->
+        </div>
+        <!-- Mask & flexbox options-->
+        </div>
+        <!-- Full Page Intro -->
+    </header>
+    <!-- Main navigation -->
+    <!--Main Layout-->
+
+
+    <!-- Additional text area, if needed -->
+    <!-- <main>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-12 text-center">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </main> -->
+
+
+
+
+    <script type="text/javascript" src="../static/js/form.js"></script>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
