@@ -20,6 +20,11 @@
           color: whitesmoke;
         }
 
+
+        .custom-control-label {
+         color: DFDFDF;
+        }
+
 /* End Styling of the form */
 
  /* NOTE: The CSS used in this section uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image */
@@ -73,7 +78,7 @@
         }
 
         .white-text {
-          color: white;
+          color: #F8F8F8;
         }
 
 /* End mdbootstrap.com CSS */

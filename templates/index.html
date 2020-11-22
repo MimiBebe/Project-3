@@ -41,7 +41,7 @@
 
                                 <!-- Step 1 of Form -->
                                 <div class="tab">
-                                    <h5 class="form-header">Your Personal Details</h5>
+                                    <h5 class="form-header">Step 1: Your Personal Details</h5>
                                     <!-- Form Input: Gender -->
                                     <div class="form-group">
                                         <div id="genderButtons" class="form-check form-check-inline">
@@ -102,6 +102,25 @@
                                         </div>
                                     </div>
 
+                                    <!-- Form Input: Education Level -->
+                                    <div class="form-group">
+                                        <div id="educationButtons" class="form-check form-check-inline">
+                                            <label class="button-label text-white" for="educationButtons">Did you graduate high school?</label>
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="graduateButton" name="educationRadios">
+                                                <label class="custom-control-label"
+                                                    for="graduateButton">Yes</label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio text-white">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="notGraduateButton" name="educationRadios">
+                                                <label class="custom-control-label"
+                                                    for="notGraduateButton">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!-- Form Input: Number of Dependents -->
                                     <div class="form-group">
@@ -118,18 +137,6 @@
                                                     onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                                                     class="plus"></button>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Form Input: Education Level -->
-                                    <div class="form-group">
-                                        <div id="educationLevel" class="form-check form-check-inline">
-                                            <label class="text-white" for="sel1">Education Level</label>
-                                            <select class="form-control" id="sel1">
-                                                <option value="" disabled selected>select your education level</option>
-                                                <option>Graduate</option>
-                                                <option>Under Graduate</option>
-                                            </select>
                                         </div>
                                     </div>
 
@@ -157,7 +164,7 @@
                                 </div> <!-- End of Step 1 of the form -->
 
                                 <div class="tab">
-                                    <h5 class="form-header">Your Loan Details</h5>
+                                    <h5 class="form-header">Step 2: Your Loan Details</h5>
 
                                     <!-- Begin Step 2 of the form -->
                                     <!-- Form Input: Property Area -->
