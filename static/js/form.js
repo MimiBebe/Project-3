@@ -1,4 +1,5 @@
-console.log("hi");
+
+// This JS is used to create multiple steps in the input form
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
@@ -34,6 +35,14 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
+
+    // await delay(5000);
+
+
+
+    // This redirects the user to the data page
+    window.location.replace("results.html");
+
     document.getElementById("regForm").submit();
     return false;
   }
