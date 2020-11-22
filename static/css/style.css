@@ -1,5 +1,12 @@
 
 
+body {
+  font-family: helvetica;
+}
+
+
+
+
 /* CSS for multi step form: https://www.w3schools.com/howto/howto_js_form_steps.asp */
 
 
@@ -17,7 +24,7 @@
 
 /* Style the Form */
         .form-header {
-          color: whitesmoke;
+          color: #E0BB4E;
         }
 
 
