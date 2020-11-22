@@ -1,194 +1,205 @@
 
 
+/* CSS for multi step form: https://www.w3schools.com/howto/howto_js_form_steps.asp */
 
 
+/* Style the radio buttons */
+        .custom-radio {
+          margin-left:5px;
+          margin-right:5px;
+        }
 
+        .button-label {
+          padding-right: 10px;
+        }
 
+/* End Styling of the radio buttons */
 
+/* Style the Form */
+        .form-header {
+          color: whitesmoke;
+        }
+
+/* End Styling of the form */
 
  /* NOTE: The CSS used in this section uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image */
- html,
- body,
- header,
- .view {
-   height: 100%;
- }
- 
- @media (max-width: 740px) {
-   html,
-   body,
-   header,
-   .view {
-     height: 1000px;
-   }
- }
- @media (min-width: 800px) and (max-width: 850px) {
-   html,
-   body,
-   header,
-   .view {
-     height: 800px;
-   }
- }
- 
- 
- @media (max-width: 991px) {
-   .navbar:not(.top-nav-collapse) {
-     background: #3f51b5 !important;
-   }
- }
- 
- .rgba-gradient {
-   background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
-   background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)));
-   background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
- }
- 
- .card {
-   background-color: rgba(109, 41, 23, 0.7);
- }
- 
- .md-form label {
-   color: #ffffff;
- }
- 
- h6 {
-   line-height: 1.7;
- }
+        html,
+        body,
+        header,
+        .view {
+          height: 100%;
+        }
+        
+        @media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .view {
+            height: 1000px;
+          }
+        }
+        @media (min-width: 800px) and (max-width: 850px) {
+          html,
+          body,
+          header,
+          .view {
+            height: 800px;
+          }
+        }
+        
+        
+        @media (max-width: 991px) {
+          .navbar:not(.top-nav-collapse) {
+            background: #3f51b5 !important;
+          }
+        }
+        
+        .rgba-gradient {
+          background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+          background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)));
+          background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+        }
+        
+        .card {
+          background-color: rgba(109, 41, 23, 0.7);
+        }
+        
+        .md-form label {
+          color: #ffffff;
+        }
+        
+        h6 {
+          line-height: 1.7;
+        }
 
- .white-text {
-  color: white;
- }
+        .white-text {
+          color: white;
+        }
 
 /* End mdbootstrap.com CSS */
 
 
 /* CSS for Number of Dependents section in form */
-.number-input input[type="number"] {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-  }
-  
-  .number-input input[type=number]::-webkit-inner-spin-button,
-  .number-input input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  }
-  
-  .number-input {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .number-input button {
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin: 0;
-  position: relative;
-  }
-  
-  .number-input button:before,
-  .number-input button:after {
-  display: inline-block;
-  position: absolute;
-  content: '';
-  height: 2px;
-  transform: translate(-50%, -50%);
-  }
-  
-  .number-input button.plus:after {
-  transform: translate(-50%, -50%) rotate(90deg);
-  }
-  
-  .number-input input[type=number] {
-  text-align: center;
-  }
-  
-  .number-input.number-input {
-  border: 1px solid #ced4da;
-  width: 10rem;
-  border-radius: .25rem;
-  }
-  
-  .number-input.number-input button {
-  width: 2.6rem;
-  height: .7rem;
-  }
-  
-  .number-input.number-input button.minus {
-  padding-left: 10px;
-  }
-  
-  .number-input.number-input button:before,
-  .number-input.number-input button:after {
-  width: .7rem;
-  background-color: white;
-  }
-  
-  .number-input.number-input input[type=number] {
-  max-width: 4rem;
-  padding: .5rem;
-  border: 1px solid #ced4da;
-  border-width: 0 1px;
-  font-size: 1rem;
-  height: 2rem;
-  color: #495057;
-  }
-  
-  @media not all and (min-resolution:.001dpcm) {
-  @supports (-webkit-appearance: none) and (stroke-color:transparent) {
-  
-  .number-input.def-number-input.safari_only button:before,
-  .number-input.def-number-input.safari_only button:after {
-  margin-top: -.3rem;
-  }
-  }
-  }
-
+        .number-input input[type="number"] {
+          -webkit-appearance: textfield;
+          -moz-appearance: textfield;
+          appearance: textfield;
+          }
+          
+          .number-input input[type=number]::-webkit-inner-spin-button,
+          .number-input input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          }
+          
+          .number-input {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+          }
+          
+          .number-input button {
+          -webkit-appearance: none;
+          background-color: transparent;
+          border: none;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          margin: 0;
+          position: relative;
+          }
+          
+          .number-input button:before,
+          .number-input button:after {
+          display: inline-block;
+          position: absolute;
+          content: '';
+          height: 2px;
+          transform: translate(-50%, -50%);
+          }
+          
+          .number-input button.plus:after {
+          transform: translate(-50%, -50%) rotate(90deg);
+          }
+          
+          .number-input input[type=number] {
+          text-align: center;
+          }
+          
+          .number-input.number-input {
+          border: 1px solid #ced4da;
+          width: 10rem;
+          border-radius: .25rem;
+          }
+          
+          .number-input.number-input button {
+          width: 2.6rem;
+          height: .7rem;
+          }
+          
+          .number-input.number-input button.minus {
+          padding-left: 10px;
+          }
+          
+          .number-input.number-input button:before,
+          .number-input.number-input button:after {
+          width: .7rem;
+          background-color: white;
+          }
+          
+          .number-input.number-input input[type=number] {
+          max-width: 4rem;
+          padding: .5rem;
+          border: 1px solid #ced4da;
+          border-width: 0 1px;
+          font-size: 1rem;
+          height: 2rem;
+          color: #495057;
+          }
+          
+          @media not all and (min-resolution:.001dpcm) {
+          @supports (-webkit-appearance: none) and (stroke-color:transparent) {
+          
+          .number-input.def-number-input.safari_only button:before,
+          .number-input.def-number-input.safari_only button:after {
+          margin-top: -.3rem;
+          }
+          }
+          }
   /* End CSS for Number of Dependents section in form */
 
-/* Add margin around the radio buttons */
-.custom-radio {
-  margin-left:5px;
-  margin-right:5px;
-}
-
-.button-label {
-  padding-right: 10px;
-}
 
 
+/* CSS to create multiple steps in the form */
+        /* Mark input boxes that gets an error on validation: */
+        input.invalid {
+          background-color: #ffdddd;
+        }
 
+        /* Hide all steps by default: */
+        .tab {
+          display: none;
+        }
 
-/* Test */
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
+        /* Make circles that indicate the steps of the form: */
+        .step {
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbbbbb;
+          border: none;
+          border-radius: 50%;
+          display: inline-block;
+          opacity: 0.5;
+        }
 
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
+        /* Mark the active step: */
+        .step.active {
+          opacity: 1;
+        }
 
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+          background-color: #4CAF50;
+        }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #4CAF50;
-}
+/* End CSS to create multiple steps in the form */
