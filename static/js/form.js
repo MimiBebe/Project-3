@@ -1,4 +1,3 @@
-
 // This JS is used to create multiple steps in the input form
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
