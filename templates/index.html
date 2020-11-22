@@ -12,17 +12,11 @@
     <!-- Our CSS  -->
     <link rel="stylesheet" href="../static/css/style.css">
 
-
-
-
-
 </head>
 
 <body>
-
     <header>
-
-<!-- NOTE: The template for this page uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image -->
+        <!-- NOTE: The template for this page uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image -->
 
         <!-- Full Page Intro -->
         <div class="view"
@@ -32,9 +26,6 @@
             <div class="container">
                 <!--Grid row-->
                 <div class="row mt-5">
-
-
-
 
                     <!--Grid column-->
                     <div class="col-md-6 col-xl-5 mb-4">
@@ -49,55 +40,108 @@
                                 </div>
                                 <!--Body-->
 
-                                <!-- Radio Buttons for Male/Female -->
-                                <div id="genderButtons">
-                                    <label class="text-white" for"genderButtons">Gender</label>
+                                <!-- Radio buttons for Gender -->
+                                <div class="form-group">
+                                    <div id="genderButtons" class="form-check form-check-inline">
+                                        <label class="button-label text-white" for="genderButtons">Gender:</label>
 
-                                    <div class="custom-control custom-radio text-white">
-                                        <input type="radio" class="custom-control-input" id="femaleRadioButton"
-                                            name="genderRadios">
-                                        <label class="custom-control-label" for="femaleRadioButton">Female</label>
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input" id="femaleRadioButton"
+                                                name="genderRadios">
+                                            <label class="custom-control-label" for="femaleRadioButton">Female</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input" id="maleRadioButton"
+                                                name="genderRadios">
+                                            <label class="custom-control-label" for="maleRadioButton">Male</label>
+                                        </div>
                                     </div>
-
-                                    <div class="custom-control custom-radio text-white">
-                                        <input type="radio" class="custom-control-input" id="maleRadioButton"
-                                            name="genderRadios" checked>
-                                        <label class="custom-control-label" for="maleRadioButton">Male</label>
-                                    </div>
-
                                 </div>
 
                                 <!-- Radio buttons for marital status -->
-                                <div id="marriageButtons">
+                                <div class="form-group">
+                                    <div id="marriageButtons" class="form-check form-check-inline">
 
-                                    <label class="text-white" for="marriageButtons">Are you married?</label>
-                                    <div class="custom-control custom-radio text-white">
-                                        <input type="radio" class="custom-control-input" id="yesMarriageButton"
-                                            name="marriageRadios">
-                                        <label class="custom-control-label" for="yesMarriageButton">Yes</label>
-                                    </div>
+                                        <label class="text-white" for="marriageButtons">Are you married?</label>
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input" id="yesMarriageButton"
+                                                name="marriageRadios">
+                                            <label class="custom-control-label" for="yesMarriageButton">Yes</label>
+                                        </div>
 
-                                    <div class="custom-control custom-radio text-white">
-                                        <input type="radio" class="custom-control-input" id="noMarriageButton"
-                                            name="marriageRadios" checked>
-                                        <label class="custom-control-label" for="noMarriageButton">No</label>
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input" id="noMarriageButton"
+                                                name="marriageRadios">
+                                            <label class="custom-control-label" for="noMarriageButton">No</label>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- Radio buttons for self employment -->
-                                <div id="selfEmployedButtons">
+                                <div class="form-group">
+                                    <div id="selfEmployedButtons" class="form-check form-check-inline">
+                                        <label class="button-label text-white" for="selfEmployedButtons">Are you self
+                                            employed?</label>
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input" id="yesSelfEmployedButton"
+                                                name="selfEmployedRadios">
+                                            <label class="custom-control-label" for="yesSelfEmployedButton">Yes</label>
+                                        </div>
 
-                                    <label class="text-white" for="selfEmployedButtons">Are you self employed?</label>
-                                    <div class="custom-control custom-radio text-white">
-                                        <input type="radio" class="custom-control-input" id="yesSelfEmployedButton"
-                                            name="selfEmployedRadios">
-                                        <label class="custom-control-label" for="yesSelfEmployedButton">Yes</label>
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input" id="noSelfEmployedButton"
+                                                name="selfEmployedRadios">
+                                            <label class="custom-control-label" for="noSelfEmployedButton">No</label>
+                                        </div>
                                     </div>
+                                </div>
 
-                                    <div class="custom-control custom-radio text-white">
-                                        <input type="radio" class="custom-control-input" id="noSelfEmployedButton"
-                                            name="selfEmployedRadios" checked>
-                                        <label class="custom-control-label" for="noSelfEmployedButton">No</label>
+
+
+                                <!-- Radio buttons for property area -->
+
+                                <div class="form-group">
+                                    <div id="propertyAreaButtons">
+
+                                        <label class="text-white" for="propertyAreaButtons">Where would you like to buy your home?</label>
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input"
+                                                id="urbanPropertyAreaButton" name="propertyAreaRadios">
+                                            <label class="custom-control-label"
+                                                for="urbanPropertyAreaButton">Urban</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input"
+                                                id="semiUrbanPropertyAreaButton" name="propertyAreaRadios">
+                                            <label class="custom-control-label" for="semiUrbanPropertyAreaButton">Semi
+                                                Urban</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio text-white">
+                                            <input type="radio" class="custom-control-input"
+                                                id="ruralPropertyAreaButton" name="propertyAreaRadios">
+                                            <label class="custom-control-label"
+                                                for="ruralPropertyAreaButton">Rural</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <!-- Number of Dependents -->
+                                <div id="numberOfDependents">
+                                    <label class="text-white" for="numberOfDependents">How many dependents do
+                                        you
+                                        have?</label>
+                                    <div class="def-number-input number-input safari_only">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"></button>
+                                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"></button>
                                     </div>
                                 </div>
 
@@ -106,11 +150,6 @@
 
 
 
-                                <div class="md-form">
-                                    <i class="fas fa-envelope prefix white-text active"></i>
-                                    <input type="email" id="form2" class="white-text form-control">
-                                    <label for="form2" class="active">Dependents</label>
-                                </div>
                                 <div class="md-form">
                                     <i class="fas fa-lock prefix white-text active"></i>
                                     <input type="password" id="form4" class="white-text form-control">
@@ -121,19 +160,12 @@
                                     <input type="password" id="form4" class="white-text form-control">
                                     <label for="form4">Credit History</label>
                                 </div>
-                                <div class="md-form">
-                                    <i class="fas fa-lock prefix white-text active"></i>
-                                    <input type="password" id="form4" class="white-text form-control">
-                                    <label for="form4">Property Area</label>
-                                </div>
-
-
 
 
 
 
                                 <div class="text-center mt-4">
-                                    <button class="btn btn-indigo">Sign up</button>
+                                    <button class="btn btn-indigo text-white">Submit</button>
                                     <hr class="hr-light mb-3 mt-4">
                                     <div class="inline-ul text-center">
                                         <a class="p-2 m-2 tw-ic">
