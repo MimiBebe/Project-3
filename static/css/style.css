@@ -27,7 +27,7 @@
    body,
    header,
    .view {
-     height: 650px;
+     height: 800px;
    }
  }
  
@@ -127,7 +127,7 @@
   .number-input.number-input button:before,
   .number-input.number-input button:after {
   width: .7rem;
-  background-color: #495057;
+  background-color: white;
   }
   
   .number-input.number-input input[type=number] {
@@ -160,4 +160,35 @@
 
 .button-label {
   padding-right: 10px;
+}
+
+
+
+
+/* Test */
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
 }
