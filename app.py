@@ -43,6 +43,12 @@ def recomendationRoute():
     recWebPage = render_template("form.html")
     return recWebPage    
 
+@app.route("/response", methods=["POST"])
+def formResponse():
+    """This runs when form response is submited"""
+    print(request.json)
+    return "success"
+
 # serve  the map page html
 @app.route("/results.html")
 def mapRoute():
