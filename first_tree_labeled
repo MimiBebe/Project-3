@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label=<Credit_History_1.0 &le; 0.5<br/>gini = 0.433<br/>samples = 360<br/>value = [114, 246]<br/>class = Approved>, fillcolor="#95caf1"] ;
+1 [label=<ApplicantIncome &le; 4750.0<br/>gini = 0.183<br/>samples = 59<br/>value = [53, 6]<br/>class = Denied>, fillcolor="#e88f4f"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<CoapplicantIncome &le; 6623.0<br/>gini = 0.095<br/>samples = 40<br/>value = [38, 2]<br/>class = Denied>, fillcolor="#e68843"] ;
+1 -> 2 ;
+3 [label=<gini = 0.05<br/>samples = 39<br/>value = [38, 1]<br/>class = Denied>, fillcolor="#e6843e"] ;
+2 -> 3 ;
+4 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 1]<br/>class = Approved>, fillcolor="#399de5"] ;
+2 -> 4 ;
+5 [label=<ApplicantIncome &le; 5392.5<br/>gini = 0.332<br/>samples = 19<br/>value = [15, 4]<br/>class = Denied>, fillcolor="#eca36e"] ;
+1 -> 5 ;
+6 [label=<gini = 0.0<br/>samples = 3<br/>value = [0, 3]<br/>class = Approved>, fillcolor="#399de5"] ;
+5 -> 6 ;
+7 [label=<gini = 0.117<br/>samples = 16<br/>value = [15, 1]<br/>class = Denied>, fillcolor="#e78946"] ;
+5 -> 7 ;
+8 [label=<Married_Yes &le; 0.5<br/>gini = 0.323<br/>samples = 301<br/>value = [61, 240]<br/>class = Approved>, fillcolor="#6bb6ec"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<ApplicantIncome &le; 7320.5<br/>gini = 0.419<br/>samples = 107<br/>value = [32, 75]<br/>class = Approved>, fillcolor="#8dc7f0"] ;
+8 -> 9 ;
+10 [label=<gini = 0.378<br/>samples = 91<br/>value = [23, 68]<br/>class = Approved>, fillcolor="#7cbeee"] ;
+9 -> 10 ;
+11 [label=<gini = 0.492<br/>samples = 16<br/>value = [9, 7]<br/>class = Denied>, fillcolor="#f9e3d3"] ;
+9 -> 11 ;
+12 [label=<ApplicantIncome &le; 4194.0<br/>gini = 0.254<br/>samples = 194<br/>value = [29, 165]<br/>class = Approved>, fillcolor="#5caeea"] ;
+8 -> 12 ;
+13 [label=<gini = 0.142<br/>samples = 104<br/>value = [8, 96]<br/>class = Approved>, fillcolor="#49a5e7"] ;
+12 -> 13 ;
+14 [label=<gini = 0.358<br/>samples = 90<br/>value = [21, 69]<br/>class = Approved>, fillcolor="#75bbed"] ;
+12 -> 14 ;
+}
