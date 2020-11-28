@@ -43,19 +43,21 @@ def recomendationRoute():
     recWebPage = render_template("form.html")
     return recWebPage    
 
-@app.route("/response", methods=["POST"])
-def formResponse():
+@app.route("/predict", methods=["POST"])
+def predict():
     """This runs when form response is submited"""
-    print(request.json)
-    return "success"
 
-# serve  the map page html
-@app.route("/results.html")
-def mapRoute():
-    """This runs the browser and load the map route"""
-    mapWebPage = render_template("results.html")
-    return mapWebPage    
+    # get the reponses
+    formResponse = request.form
+    for key in formResponse.keys():
+        for value in f.getlist(key):
+            print(key,":",value)
+
+            # process the entries
 
 
-if __name__ == '__main__':
+    
+    return render_template('form.html', prediction_text = "Testing")
+    
+if __name__ == "__main__":
     app.run(debug=True)
