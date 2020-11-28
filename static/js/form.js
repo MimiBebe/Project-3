@@ -36,8 +36,14 @@ async function nextPrev(n) {
     //...the form gets submitted:
     let formData = getData();
 
+    // This changes the content on the page from form to results
+    document.getElementById("formContainer").classList.add("d-none");
+
+    document.getElementById("resultsContainer").classList.remove("d-none");
+
+
     var response = await fetch("/response", {
-      method: "POST", 
+      method: "POST",
       body: JSON.stringify(formData),
       headers: {
         'Content-Type': 'application/json'
@@ -45,15 +51,8 @@ async function nextPrev(n) {
     });
     console.log(await response.text());
 
-    // await delay(5000);
-
-
-
-    // This redirects the user to the data page
-    // window.location.replace("results.html");
-
     // document.getElementById("regForm").submit();
-    // return false;
+    return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
