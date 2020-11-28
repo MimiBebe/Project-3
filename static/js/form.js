@@ -21,8 +21,8 @@ function showTab(n) {
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
 }
-
-function nextPrev(n) {
+var globalmcgloblaface;
+async function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
@@ -34,16 +34,26 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
+    let formData = getData();
+
+    var response = await fetch("/response", {
+      method: "POST", 
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
+    console.log(await response.text());
 
     // await delay(5000);
 
 
 
     // This redirects the user to the data page
-    window.location.replace("results.html");
+    // window.location.replace("results.html");
 
-    document.getElementById("regForm").submit();
-    return false;
+    // document.getElementById("regForm").submit();
+    // return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
