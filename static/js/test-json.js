@@ -25,8 +25,7 @@ function getData()
         genderF: isRadioButtonChecked("femaleRadioButton"),
         marriageY: isRadioButtonChecked("yesMarriageButton"),
         numberDependents: getNumberFromCounter("dependentCounter"),
-        creditScore: getValueFromDropdown("creditDropdown")
-
+        // creditScore: getValueFromDropdown("creditDropdown"),
     };
 
 

@@ -31,11 +31,6 @@ async function nextPrev(n) {
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-
-
-  console.log(currentTab);
-
-
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
@@ -64,7 +59,7 @@ async function nextPrev(n) {
 
     // window.location.replace("results.html");
 
-    document.getElementById("regForm").submit();
+    // document.getElementById("regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
