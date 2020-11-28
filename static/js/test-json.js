@@ -1,17 +1,22 @@
-function isRadioButtonChecked(id)
-{
+
+// Radio Buttons
+function isRadioButtonChecked(id) {
     return document.getElementById(id).checked;
 }
 
-function getNumberFromCounter(id)
-{
+// Number of Dependents Counter
+function getNumberFromCounter(id) {
     return document.getElementById(id).valueAsNumber;
 }
 
-function getValueFromDropdown(id)
-{
+// Dropdown
+function getValueFromDropdown(id) {
     return document.getElementById(id).value;
 }
+
+// Input fields
+
+
 
 function getData()
 {
@@ -20,8 +25,7 @@ function getData()
         genderF: isRadioButtonChecked("femaleRadioButton"),
         marriageY: isRadioButtonChecked("yesMarriageButton"),
         numberDependents: getNumberFromCounter("dependentCounter"),
-        // creditScore: getValueFromDropdown("")
-
+        // creditScore: getValueFromDropdown("creditDropdown"),
     };
 
 
