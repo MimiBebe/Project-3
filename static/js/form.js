@@ -51,19 +51,10 @@ async function nextPrev(n) {
     });
     console.log(await response.text());
 
-    // This changes the content on the page from form to results
-    // document.getElementById("formContainer").classList.add("d-none");
-
-    // document.getElementById("resultsContainer").classList.remove("d-none");
-
-
-    // window.location.replace("results.html");
-
     // document.getElementById("regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
-
   showTab(currentTab);
 }
 
