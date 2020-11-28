@@ -23,7 +23,7 @@
             style="background-image: url('../static/images/house.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
             <!-- Content -->
-            <div class="container">
+            <div class="container" id="formContainer">
                 <!--Grid row-->
                 <div class="row mt-5">
 
@@ -131,7 +131,8 @@
                                                 <button
                                                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                                                     class="minus"></button>
-                                                <input class="quantity" min="0" name="quantity" value="0" type="number">
+                                                <input class="quantity" min="0" name="quantity" value="0" type="number"
+                                                    id="dependentCounter">
                                                 <button
                                                     onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                                                     class="plus"></button>
@@ -142,10 +143,10 @@
                                     <!-- Form Input: Credit History -->
                                     <div class="form-group">
                                         <div id="creditHistory" class="form-check form-check-inline">
-                                            <label class="text-white" for="sel1">Credit History</label>
-                                            <select class="form-control" id="sel1">
+                                            <label class="text-white" for="creditDropdown">Credit History</label>
+                                            <select class="form-control" id="creditDropdown">
                                                 <option value="" disabled selected>select your credit history</option>
-                                                <option>Poor</option>
+                                                <option value="poorCredit">Poor</option>
                                                 <option>Fair</option>
                                                 <option>Good</option>
                                                 <option>Excellent</option>
@@ -243,36 +244,41 @@
                 <!--Grid row-->
             </div>
             <!-- Content -->
-        </div>
-        <!-- Mask & flexbox options-->
-        </div>
-        <!-- Full Page Intro -->
-    </header>
-    <!-- Main navigation -->
-    <!--Main Layout-->
 
+            <!-- Content -->
+            <div class="container d-none" id="resultsContainer">
+                <!--Grid row-->
+                <div class="row mt-5">
 
-    <!-- Additional text area, if needed -->
-    <!-- <main>
-        <div class="container">
-            <div class="row py-5">
-                <div class="col-md-12 text-center">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <!-- Results page -->
+                    <div class="col-md-6 col-xl-5 mb-4">
+                        <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="card-body text-white">
+                                <h1>Congrats! you qualify!</h1>
+                                <h1>OR sorry, you don't qualify</h1>
+                                <p>include a short explanation here of why our model decided that the user did or didn't
+                                    qualify</p>
+                                <a href="form.html" type="button" class="btn btn-light">Try Again</a>
+                                <a href="data.html" type="button" class="btn btn-light">Our Machine Learning Model</a>
+
+                            </div>
+                        </div>
+                        <!-- Full Page Intro -->
+                    </div>
+                    <!-- End of Results page -->
                 </div>
             </div>
         </div>
-    </main> -->
+    </header>
 
 
 
+
+
+
+    <script type="text/javascript" src="../static/js/test-json.js"></script>
 
     <script type="text/javascript" src="../static/js/form.js"></script>
-
-
 
 
     <!-- Bootstrap JS -->
