@@ -47,9 +47,14 @@ function getData()
         Gender = "Female";
     }
 
-    else {
+    else if (isRadioButtonChecked("maleRadioButton") === true) {
         Gender = "Male";
     }
+
+    else {
+        Gender = "";
+    }
+
 
     // Marital Status
     if (isRadioButtonChecked("yesMarriageButton") === true) {
