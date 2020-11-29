@@ -75,7 +75,13 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
+
+  // the selects the input fields
   y = x[currentTab].getElementsByTagName("input");
+
+  // this selects the dropdown fields
+  d = x[currentTab].getElementsByTagName("select");
+
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
@@ -86,12 +92,34 @@ function validateForm() {
       valid = false;
     }
   }
+
+
+
+  // Validate the dropdown fields (Credit History and Term of Loan)
+  for (i = 0; i < d.length; i++) {
+    // If a field is empty...
+    if (d[i].value == "") {
+      // add an "invalid" class to the field:
+      d[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+      document.getElementById('creditDropdown').style.backgroundColor = "#FFDDDD";
+      document.getElementById('termofLoan').style.backgroundColor = "#FFDDDD";
+
+    }
+    else {
+      document.getElementById('creditDropdown').style.backgroundColor = "white";
+      document.getElementById('termofLoan').style.backgroundColor = "white";
+    }
+  }
+
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return valid; // return the valid status
 }
+
 
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
