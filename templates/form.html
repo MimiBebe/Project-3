@@ -2,11 +2,12 @@
 <html>
 
 <head>
+
     <head>
         <meta charset="UTF-8">
         <title>Mortgage Loan Predictor</title>
-      
-      </head>
+
+    </head>
 
 </head>
 
@@ -19,82 +20,61 @@
         <!-- Input section using form and post method -->
         <form action="{{url_for('predict')}}" method="post">
             <div class="tab">
-                <div id="genderButtons" class="form-check form-check-inline">
-                    <label class="button-label text-white" for="genderButtons">Gender:</label>
+                <h5 class="form-header">Step 2: Your Personal Details</h5>
 
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="femaleRadioButton" name="femaleGenderButton">
-                        <label class="custom-control-label" for="femaleRadioButton">Female</label>
-                    </div>
-
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="maleRadioButton" name="maleGenderButton">
-                        <label class="custom-control-label" for="maleRadioButton">Male</label>
-                    </div>
+                <div id="gender" class="form-check form-check-inline">
+                    <label class="text-white" for="sel1">Gender</label>
+                    <select id="sel1" name="Gender">
+                        <option value="" disabled selected>select your gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
                 </div>
 
 
-                <div id="marriageButtons" class="form-check form-check-inline">
 
-                    <label class="text-white" for="marriageButtons">Are you married?</label>
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="yesMarriageButton" name="yesMarriageButton">
-                        <label class="custom-control-label" for="yesMarriageButton">Yes</label>
-                    </div>
-
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="noMarriageButton" name="noMarriageButton">
-                        <label class="custom-control-label" for="noMarriageButton">No</label>
-                    </div>
+                <div id="Mariage Status" class="form-check form-check-inline">
+                    <label class="text-white" for="sel1">Marital Status</label>
+                    <select id="sel1" name="Married">
+                        <option value="" disabled selected>Are you married?</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
                 </div>
 
-                <div id="selfEmployedButtons" class="form-check form-check-inline">
-                    <label class="button-label text-white" for="selfEmployedButtons">Are you
-                        self
-                        employed?</label>
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="yesSelfEmployedButton"
-                            name="yesSelfEmployedButton">
-                        <label class="custom-control-label" for="yesSelfEmployedButton">Yes</label>
-                    </div>
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="noSelfEmployedButton"
-                            name="noSelfEmployedButton">
-                        <label class="custom-control-label" for="noSelfEmployedButton">No</label>
-                    </div>
+                <div id="Mariage Status" class="form-check form-check-inline">
+                    <label class="text-white" for="sel1">Employedment Status</label>
+                    <select id="sel1" name="Self_Employed">
+                        <option value="" disabled selected>Are you self-employed?</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+
+                <div id="Education Status" class="form-check form-check-inline">
+                    <label class="text-white" for="sel1">Education Status</label>
+                    <select id="sel1" name="Education">
+                        <option value="" disabled selected>Have you graduated highschool?</option>
+                        <option>Graduate</option>
+                        <option>Not Graduate</option>
+                    </select>
                 </div>
 
 
-                <div id="educationButtons" class="form-check form-check-inline">
-                    <label class="button-label text-white" for="educationButtons">Did you graduate high school?</label>
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="graduateButton" name="graduateEducationButton">
-                        <label class="custom-control-label" for="graduateButton">Yes</label>
-                    </div>
-
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="notGraduateButton" name="notGraduateEducationButton">
-                        <label class="custom-control-label" for="notGraduateButton">No</label>
-                    </div>
-                </div>
-
-                <div id="numberOfDependents" class="form-check form-check-inline">
-                    <label class="text-white" for="numberOfDependents">How many dependents do
-                        you
-                        have?</label>
-                    <div class="def-number-input number-input safari_only">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                            class="minus"></button>
-                        <input class="numberOfDependents" min="0" name="numberOfDependents" value="0" type="number" id="dependentCounter">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                            class="plus"></button>
-                    </div>
+                <div id="Dependents" class="form-check form-check-inline">
+                    <label class="text-white" for="sel1">Number of Dependents</label>
+                    <select id="sel1" name="Dependents">
+                        <option value="" disabled selected>Number of Dependents</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3+</option>
+                    </select>
                 </div>
 
 
                 <div id="creditHistory" class="form-check form-check-inline">
                     <label class="text-white" for="sel1">Credit History</label>
-                    <select id="sel1" name = "creditHistory">
+                    <select id="sel1" name="Credit_History">
                         <option value="" disabled selected>select your credit history</option>
                         <option>Poor</option>
                         <option>Fair</option>
@@ -106,7 +86,7 @@
 
                 <div id="totalIncome" class="form-check form-check-inline needs-validation">
                     <label class="text-white" for="totalIncome">Gross Annual Income</label>
-                    <input name="totalIncome" type="text" placeholder="(include co-applicant's income)" required>
+                    <input name="TotalIncome" type="text" placeholder="(include co-applicant's income)" required>
 
                 </div>
 
@@ -119,58 +99,47 @@
                 <!-- Begin Step 2 of the form -->
                 <!-- Form Input: Property Area -->
 
-                <div id="propertyAreaButtons">
-                    <label class="text-white" for="propertyAreaButtons">Where would you like to
-                        buy
-                        your home?</label>
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="urbanPropertyAreaButton"
-                            name="urbanPropertyAreaButton">
-                        <label class="custom-control-label" for="urbanPropertyAreaButton">Urban</label>
-                    </div>
-
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="semiUrbanPropertyAreaButton"
-                            name="semiUrbanPropertyAreaButton">
-                        <label class="custom-control-label" for="semiUrbanPropertyAreaButton">Semi
-                            Urban</label>
-                    </div>
-
-                    <div class="custom-control custom-radio text-white">
-                        <input type="radio" class="custom-control-input" id="ruralPropertyAreaButton"
-                            name="ruralPropertyAreaButton">
-                        <label class="custom-control-label" for="ruralPropertyAreaButton">Rural</label>
-                    </div>
+                <div id="Property_Area" class="form-check form-check-inline">
+                    <label class="text-white" for="sel1">Property Area</label>
+                    <select id="sel1" name="Property_Area">
+                        <option value="" disabled selected>select your property area</option>
+                        <option>Urban</option>
+                        <option>Semiurban</option>
+                        <option>Rural</option>
+                    </select>
                 </div>
 
-    <script type="text/javascript" src="../static/js/results-json.js"></script>
-
-    <script type="text/javascript" src="../static/js/form.js"></script>
-
-                <div id="loanAmount" class="form-check form-check-inline">
+                <!-- Form Input: Loan Amount -->
+                <div id="LoanAmount" class="form-check form-check-inline">
                     <label class="text-white" for="loanAmount">Loan Amount</label>
-                    <input class="form-control" type="text" placeholder="">
+                    <input name=LoanAmount class="form-control" type="text" placeholder="">
                 </div>
 
+
+                <!-- Form Input: Term of Loan -->
 
                 <div id="termofLoan" class="form-check form-check-inline">
                     <label class="text-white" for="termofLoan">Term of Loan</label>
-                    <select class="form-control" id="termofLoan">
+                    <select class="form-control" id="termofLoan" name="Loan_Amount_Term">
                         <option value="" disabled selected>select your loan term</option>
                         <option>10 year</option>
                         <option>15 year</option>
                         <option>30 year</option>
                     </select>
+
                 </div>
             </div>
 
 
-            <button type="submit" class="btn"> Predict</button>
-        </form>
+    </div>
 
-        <br>
-        <br>
-        {{ prediction_text }}
+
+    <button type="submit" class="btn"> Predict</button>
+    </form>
+
+    <br>
+    <br>
+    {{ prediction_text }}
     </div>
 </body>
 
