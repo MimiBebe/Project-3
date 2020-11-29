@@ -27,34 +27,95 @@ function getLoanValueFromDropdown() {
 // Home Location Radio Buttons
 function getHomeLocation() {
     if (document.getElementById("urbanPropertyAreaButton").checked === true) {
-        return "urban";
+        return "Urban";
+    }
+
+    else if (document.getElementById("semiUrbanPropertyAreaButton").checked === true) {
+        return "Semiurban";
     }
 
     else {
-        return "suburban";
+        return "Rural";
     }
-
 }
 
 
 function getData()
 {
+    // Gender
+    if (isRadioButtonChecked("femaleRadioButton") === true) {
+        Gender = "female";
+    }
 
-    return {
-        // tab 1 responses
-        genderF: isRadioButtonChecked("femaleRadioButton"),
-        marriageY: isRadioButtonChecked("yesMarriageButton"),
-        selfEmployedY: isRadioButtonChecked("yesSelfEmployedButton"),
-        graduatedY: isRadioButtonChecked("graduateButton"),
-        numberDependents: getNumberFromCounter("dependentCounter"),
-        creditHistory: getCreditValueFromDropdown(),
-        totalIncome: inputFields("totalIncomeInput"),
+    else {
+        Gender = "male";
+    }
+
+    // Marital Status
+    if (isRadioButtonChecked("yesMarriageButton") === true) {
+        Married = true;
+    }
+
+    else {
+        Married = false;
+    }
+
+    // Employment Status
+    if (isRadioButtonChecked("yesSelfEmployedButton") === true) {
+        Self_Employed = "Yes";
+    }
+
+    else {
+        Self_Employed = "No";
+    }
+
+    // Education status
+    if (isRadioButtonChecked("graduateButton") === true) {
+        Education = "Graduate";
+    }
+
+    else {
+        Education = "Not Graduate";
+    }
+
+    // Loan Term in Months
+    if (getLoanValueFromDropdown() === "30") {
+        // 30 years * 12 months in a year
+        Loan_Amount_Term = 360;
+    }
+
+    else if (getLoanValueFromDropdown() === "15") {
+        // 15 years * 12 months in a year
+        Loan_Amount_Term = 180;
+    }
+
+    else {
+        // 10 year term in months
+        Loan_Amount_Term = 120;
+    }
+
+    // Define the remaining variables
+    Dependents = getNumberFromCounter("dependentCounter");
+    Credit_History = getCreditValueFromDropdown();
+    totalIncome = inputFields("totalIncomeInput");
+    Property_Area = getHomeLocation();
+    LoanAmount = inputFields("loanAmountInput");
+
+    var formResponses = {
+        Gender: Gender,
+        Married: Married,
+        Self_Employed: Self_Employed,
+        Education: Education,
+        Dependents: Dependents,
+        Credit_History: Credit_History,
+        totalIncome: totalIncome,
         
         // tab 2 responses
-        homeLocation: getHomeLocation(),
-        loanAmount: inputFields("loanAmountInput"),
-        creditHistory: getLoanValueFromDropdown(),
-
-
+        Property_Area: Property_Area,
+        LoanAmount: LoanAmount,
+        Loan_Amount_Term: Loan_Amount_Term
     }
+
+    console.log(formResponses);
+
 };
