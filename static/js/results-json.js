@@ -118,4 +118,19 @@ function getData()
 
     console.log(formResponses);
 
+    return {
+        Gender: Gender,
+        Married: Married,
+        Self_Employed: Self_Employed,
+        Education: Education,
+        Dependents: Dependents,
+        Credit_History: Credit_History,
+        totalIncome: totalIncome,
+        
+        // tab 2 responses
+        Property_Area: Property_Area,
+        LoanAmount: LoanAmount,
+        Loan_Amount_Term: Loan_Amount_Term
+    };
+
 };

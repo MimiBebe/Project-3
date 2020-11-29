@@ -51,6 +51,8 @@ async function nextPrev(n) {
     });
     console.log(await response.text());
 
+    // console.log(formData);
+    // console.log(response);
     // document.getElementById("regForm").submit();
     return false;
   }
