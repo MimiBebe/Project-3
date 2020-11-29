@@ -159,8 +159,9 @@
                                         <div id="totalIncome" class="form-check form-check-inline needs-validation">
                                             <label class="text-white" for="totalIncome">Gross Annual Income</label>
                                             <input class="form-control" type="text"
-                                                placeholder="(include co-applicant's income)" id="totalIncomeInput" required>
- 
+                                                placeholder="(include co-applicant's income)" id="totalIncomeInput"
+                                                required>
+
                                         </div>
                                     </div>
                                 </div> <!-- End of Step 1 of the form -->
@@ -244,29 +245,46 @@
             </div>
             <!-- Content -->
 
-            <!-- Content -->
-            <div class="container d-none" id="resultsContainer">
-                <!--Grid row-->
+            <!-- Approved Tab    -->
+            <div class="container d-none" id="approvedContainer">
                 <div class="row mt-5">
-
-                    <!-- Results page -->
                     <div class="col-md-6 col-xl-5 mb-4">
                         <div class="card wow fadeInRight" data-wow-delay="0.3s">
                             <div class="card-body text-white">
                                 <h1>Congrats! you qualify!</h1>
-                                <h1>OR sorry, you don't qualify</h1>
-                                <p>include a short explanation here of why our model decided that the user did or didn't
-                                    qualify</p>
+                                <p>include a short explanation here of why our model decided that the user qualified</p>
                                 <a href="form.html" type="button" class="btn btn-light">Try Again</a>
                                 <a href="data.html" type="button" class="btn btn-light">Our Machine Learning Model</a>
 
                             </div>
                         </div>
-                        <!-- Full Page Intro -->
                     </div>
-                    <!-- End of Results page -->
                 </div>
             </div>
+            <!-- End of Approved tab -->
+
+
+            <!-- Not Approved tab -->
+            <div class="container d-none" id="notApprovedContainer">
+                <!--Grid row-->
+                <div class="row mt-5">
+                    <div class="col-md-6 col-xl-5 mb-4">
+                        <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="card-body text-white">
+                                <h1>Womp womp. According to our model, you would likely NOT be approved for a mortgage
+                                </h1>
+                                <p>include a short explanation here of why our model decided that the user didn't
+                                    qualify</p>
+                                <a href="form.html" type="button" class="btn btn-light">Try Again</a>
+                                <a href="data.html" type="button" class="btn btn-light">Our Machine Learning
+                                    Model</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Not Approved Tab -->
+
         </div>
     </header>
 

@@ -39,7 +39,18 @@ async function nextPrev(n) {
     // This changes the content on the page from form to results
     document.getElementById("formContainer").classList.add("d-none");
 
-    document.getElementById("resultsContainer").classList.remove("d-none");
+
+
+    // If the user is approved for a mortgage, show this tab
+    if (Gender === "female") {
+      document.getElementById("approvedContainer").classList.remove("d-none");
+    }
+
+    else {
+    // If the user is NOT approved for a mortgage, show this tab
+    document.getElementById("notApprovedContainer").classList.remove("d-none");
+    }
+
 
 
     var response = await fetch("/response", {
