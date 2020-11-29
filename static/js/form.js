@@ -104,12 +104,9 @@ function validateForm() {
       // and set the current valid status to false:
       valid = false;
       document.getElementById('creditDropdown').style.backgroundColor = "#FFDDDD";
-      document.getElementById('termofLoan').style.backgroundColor = "#FFDDDD";
-
     }
     else {
       document.getElementById('creditDropdown').style.backgroundColor = "white";
-      document.getElementById('termofLoan').style.backgroundColor = "white";
     }
   }
 
