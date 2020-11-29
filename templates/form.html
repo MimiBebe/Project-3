@@ -146,10 +146,10 @@
                                             <label class="text-white" for="creditDropdown">Credit History</label>
                                             <select class="form-control" id="creditDropdown">
                                                 <option value="" disabled selected>select your credit history</option>
-                                                <option value="poorCredit">Poor</option>
-                                                <option>Fair</option>
-                                                <option>Good</option>
-                                                <option>Excellent</option>
+                                                <option value="badCredit">Poor</option>
+                                                <option value="badCredit">Fair</option>
+                                                <option value="goodCredit">Good</option>
+                                                <option value="goodCredit">Excellent</option>
                                             </select>
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
                                         <div id="totalIncome" class="form-check form-check-inline needs-validation">
                                             <label class="text-white" for="totalIncome">Gross Annual Income</label>
                                             <input class="form-control" type="text"
-                                                placeholder="(include co-applicant's income)" required>
+                                                placeholder="(include co-applicant's income)" id="totalIncomeInput" required>
  
                                         </div>
                                     </div>
@@ -203,7 +203,7 @@
                                     <div class="form-group">
                                         <div id="loanAmount" class="form-check form-check-inline">
                                             <label class="text-white" for="loanAmount">Loan Amount</label>
-                                            <input class="form-control" type="text" placeholder="">
+                                            <input class="form-control" type="text" placeholder="" id="loanAmountInput">
                                         </div>
                                     </div>
 
