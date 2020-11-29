@@ -51,6 +51,7 @@ def recomendationRoute():
     return recWebPage    
 
 @app.route("/response", methods=["POST"])
+
 def formResponse():
     """This runs when form response is submited"""
     response_dict = request.json
@@ -101,11 +102,20 @@ def formResponse():
     # return render_template('form.html', prediction_text = predictionResult)
     return predictionResult
 
+
+
+@app.route("/test.html")
+def testRoute():
+    results = render_template("test.html")
+    return results 
+    print(predictionResult)
+
+
 # serve  the map page html
 @app.route("/results.html")
 def mapRoute():
     """This runs the browser and load the map route"""
-    mapWebPage = render_template("results.html")
+    mapWebPage = render_template("results.html", predictionResult = predictionResult)
     return mapWebPage    
 
 
