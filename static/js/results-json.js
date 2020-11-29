@@ -94,8 +94,18 @@ function getData()
         Loan_Amount_Term = 120;
     }
 
+
+    // If there are more than 3 dependents, mark as 3+
+    if (getNumberFromCounter("dependentCounter") > 3) {
+        Dependents = "3+";
+    }
+
+    else {
+        Dependents = getNumberFromCounter("dependentCounter");
+    }
+
+
     // Define the remaining variables
-    Dependents = getNumberFromCounter("dependentCounter");
     Credit_History = getCreditValueFromDropdown();
     totalIncome = inputFields("totalIncomeInput");
     Property_Area = getHomeLocation();
