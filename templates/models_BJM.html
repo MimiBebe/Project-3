@@ -27,61 +27,124 @@
                     <th scope="col">Neighbors tested</th>
                     <th scope="col">Optimal neighbors</th>
                     <th scope="col">Test accuracy</th>
+                    <th scope="col">Income(s) considered</th>                    
                     <th scope="col">Factors dropped</th>    
                     <th scope="col">Comment on dropped factors</th>                
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">1a</th>
                     <td>1 - 40</td>
-                    <td>3</td>
-                    <td><strong>0.800</strong></td>
+                    <td>5</td>
+                    <td><strong>0.752</strong></td>
+                    <td>Combined</td>
                     <td>None</td>
                     <td>Includes terms that could be considered "results"</td>                     
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
+                    <th scope="row">1b</th>
                     <td>1 - 40</td>
                     <td>5</td>
-                    <td><strong>0.792</strong></td>
+                    <td><strong>0.766</strong></td>
+                    <td>Applicant and Co-applicant separately</td>
+                    <td>None</td>                    
+                    <td>Includes terms that could be considered "results"</td>                     
+                </tr>
+
+                <tr>
+                    <th scope="row">2a</th>
+                    <td>1 - 40</td>
+                    <td>5</td>
+                    <td><strong>0.752</strong></td>
+                    <td>Combined</td>
                     <td>Loan Term</td>  
                     <td>Could be considered "result"</td>                                        
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
+                    <th scope="row">2b</th>
                     <td>1 - 40</td>
-                    <td>7</td>
-                    <td><strong>0.792</strong></td>
+                    <td>11</td>
+                    <td><strong>0.759</strong></td>
+                    <td>Applicant and Co-applicant separately</td>
+                    <td>Loan Term</td>  
+                    <td>Could be considered "result"</td>                                        
+                </tr>
+
+                <tr>
+                    <th scope="row">3a</th>
+                    <td>1 - 40</td>
+                    <td>21</td>
+                    <td><strong>0.752</strong></td>
+                    <td>Combined</td>
                     <td>Loan Term, Loan Amount</td> 
                     <td>Could be considered "results"</td> 
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
+                    <th scope="row">3b</th>
+                    <td>1 - 40</td>
+                    <td>21</td>
+                    <td><strong>0.759</strong></td>
+                    <td>Applicant and Co-applicant separately</td>
+                    <td>Loan Term, Loan Amount</td> 
+                    <td>Could be considered "results"</td> 
+                </tr>
+
+                <tr>
+                    <th scope="row">4a</th>
+                    <td>1 - 40</td>
+                    <td>17</td>
+                    <td><strong>0.745</strong></td>
+                    <td>Combined</td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self-employed, Married</td>
+                    <td>"Results" and terms rated less important in Random Forest runs </td>                                        
+                </tr>
+                <tr>
+                    <th scope="row">4b</th>
                     <td>1 - 40</td>
                     <td>15</td>
-                    <td><strong>0.758</strong></td>
-                    <td>Loan Term, Loan Amount, Property Area, Education, Gender, Self-employed</td>
+                    <td><strong>0.745</strong></td>
+                    <td>Applicant and Co-applicant separately</td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self-employed, Married</td>
                     <td>"Results" and terms rated less important in Random Forest runs </td>                                        
-                </tr>                
+                </tr>
+                
                 </tbody>
             </table>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h5>Testing accuracy vs. k Neighbors (orange = test, blue = train)</h5>
+                <h4>Testing accuracy vs. k Neighbors (orange = test, blue = train)</h4>
+                <h5>a) Applicant and co-applicant income combined</h5>                
             </div>
             <div class='col-md-3'>
-                <img src="/static/model_images/KNN_1.png" width="100%" </img>
+                <img src="../static/images/KNN_1a.png" width="100%" </img>
             </div>
             <div class='col-md-3'>
-                <img src="/static/model_images/KNN_2.png"  width="100%"</img>
+                <img src="../static/images/KNN_2a.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
-                <img src="/static/model_images/KNN_3.png"  width="100%"</img>
+                <img src="../static/images/KNN_3a.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
-                <img src="/static/model_images/KNN_4.png"  width="100%"</img>
+                <img src="../static/images/KNN_4a.png"  width="100%"</img>
+            </div>
+        </div>            
+        <div class="row">
+            <div class="col-md-12">
+                <h5>b) Applicant and co-applicant income treated separately</h5>                
+            </div>
+            <div class='col-md-3'>
+                <img src="../static/images/KNN_1b.png" width="100%" </img>
+            </div>
+            <div class='col-md-3'>
+                <img src="../static/images/KNN_2b.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+                <img src="../static/images/KNN_3b.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+                <img src="../static/images/KNN_4b.png"  width="100%"</img>
             </div>
         </div>            
     </div>
@@ -105,51 +168,51 @@
                     <th scope="col">Maximum depth</th>
                     <th scope="col">Test score</th>
                     <th scope="col">Factors dropped</th>    
-                    <th scope="col">Comment on dropped factors</th>                
+                    <th scope="col">Income term(s)used</th>                
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
                     <td>(not set))</td>
-                    <td><strong>0.708</strong></td>
+                    <td><strong>0.660</strong></td>
                     <td>None</td>
-                    <td>Includes terms that could be considered "results"</td>                     
+                    <td>Total income</td>                     
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>3</td>
-                    <td><strong>0.775</strong></td>
+                    <td><strong>0.730</strong></td>
                     <td>None</td>  
-                    <td>Includes terms that could be considered "results"</td>                                         
+                    <td>Total income</td>                                         
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>3</td>
-                    <td><strong>0.792</strong></td>
+                    <td><strong>0.745</strong></td>
                     <td>Loan Term</td> 
-                    <td>Could be considered "result"</td> 
+                    <td>Total income</td> 
                 </tr>
                 <tr>
                     <th scope="row">4</th>
                     <td>3</td>
-                    <td><strong>0.742</strong></td>
+                    <td><strong>0.752</strong></td>
                     <td>Loan Term, Loan Amount</td>
-                    <td>Could be considered "results"</td>                                        
+                    <td>Total income</td>                                        
                 </tr>  
                 <tr>
                     <th scope="row">5</th>
-                    <td>(not set)</td>
-                    <td><strong>0.617</strong></td>
-                    <td>Loan Term, Loan Amount, Property Area, Education, Gender, Self-employed</td>
-                    <td>"Results" and terms rated less important in Random Forest runs </td>                                        
+                    <td>3</td>
+                    <td><strong>0.759</strong></td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                    <td>Total Income </td>                                        
                 </tr>                
                 <tr>
                     <th scope="row">6</th>
                     <td>3</td>
-                    <td><strong>0.742</strong></td>
-                    <td>Loan Term, Loan Amount, Property Area, Education, Gender, Self-employed</td>
-                    <td>"Results" and terms rated less important in Random Forest runs </td>                                        
+                    <td><strong>0.738</strong></td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                    <td>Applicant Income, Co-Applicant Income </td>                                        
                 </tr>                                
                 
                 </tbody>
@@ -161,19 +224,19 @@
             </div>
             <div class='col-md-3'>
                 <h6>Tree 1</h6>
-                <img src="/static/model_images/Decision_tree_1.png" width="100%" </img>
+                <img src="../static/images/Decision_tree_1.png" width="100%" </img>
             </div>
             <div class='col-md-3'>
                 <h6>Tree 2</h6>
-                <img src="/static/model_images/Decision_tree_2.png"  width="100%"</img>
+                <img src="../static/images/Decision_tree_2.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
                 <h6>Tree 3</h6>
-                <img src="/static/model_images/Decision_tree_3.png"  width="100%"</img>
+                <img src="../static/images/Decision_tree_3.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
                 <h6>Tree 4</h6>
-                <img src="/static/model_images/Decision_tree_4.png"  width="100%"</img>
+                <img src="../static/images/Decision_tree_4.png"  width="100%"</img>
             </div>
         </div>  
 
@@ -183,11 +246,11 @@
             </div>
             <div class='col-md-3'>
                 <h6>Tree 5</h6>
-                <img src="/static/model_images/Decision_tree_5.png" width="100%" </img>
+                <img src="../static/images/Decision_tree_5.png" width="100%" </img>
             </div>
             <div class='col-md-3'>
                 <h6>Tree 6</h6>
-                <img src="/static/model_images/Decision_tree_6.png"  width="100%"</img>
+                <img src="../static/images/Decision_tree_6.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
                 <h6></h6>
@@ -216,86 +279,88 @@
                 <thead>
                 <tr>
                     <th scope="col">Random Forest</th>
-                    <th scope="col">Added parameters</th>
                     <th scope="col">Estimators</th>                                       
                     <th scope="col">Training score</th>
                     <th scope="col">Training score (oob sampling)</th>    
                     <th scope="col">Test score</th>  
-                    <th scope="col">Factors dropped</th>                                      
+                    <th scope="col">Factors dropped</th> 
+                    <th scope="col">Income term(s)used</th>                                        
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th scope="row">1a</th>
-                    <td>No</td>
                     <td>200</td>
                     <td>1.0</td>
-                    <td>0.805</td>  
-                    <td><strong>0.775</strong></td>
+                    <td>0.753</td>  
+                    <td><strong>0.730</strong></td>
                     <td>None</td>
+                    <td>Total Income</td>
                 </tr>
                 <tr>
-                    <th scope="row">1a</th>
-                    <td>max_features=None, max_depth=None, min_samples_split=2</td>
+                    <th scope="row">1b</th>
                     <td>200</td>
                     <td>1.0</td>
-                    <td>0.797</td>  
-                    <td><strong>0.733</strong></td>
+                    <td>0.744</td>  
+                    <td><strong>0.716</strong></td>
                     <td>None</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
                 </tr>
                 <tr>
                     <th scope="row">2a</th>
-                    <td>No</td>
                     <td>200</td>
                     <td>1.0</td>
-                    <td>0.814</td>  
-                    <td><strong>0.750</strong></td>
+                    <td>0.753</td>  
+                    <td><strong>0.730</strong></td>
                     <td>Loan Amount Term</td>
+                    <td>Total Income</td>
                 </tr>
                 <tr>
                     <th scope="row">2b</th>
-                    <td>max_features=None, max_depth=None, min_samples_split=2</td>
                     <td>200</td>
                     <td>1.0</td>
-                    <td>0.780</td>  
-                    <td><strong>0.742</strong></td>
+                    <td>0.737</td>  
+                    <td><strong>0.709</strong></td>
                     <td>Loan Amount Term</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
                 </tr>  
                 <tr>
                     <th scope="row">3a</th>
-                    <td>No</td>
                     <td>200</td>
-                    <td>0.997</td>
-                    <td>0.764</td>  
-                    <td><strong>0.725</strong></td>
+                    <td>0.995</td>
+                    <td>0.713</td>  
+                    <td><strong>0.681</strong></td>
                     <td>Loan Amount Term, Loan Amount</td>
+                    <td>Total Income</td>
                 </tr>                
                 <tr>
                     <th scope="row">3b</th>
-                    <td>max_features=None, max_depth=None, min_samples_split=2</td>
                     <td>200</td>
-                    <td>0.997</td>
-                    <td>0.783</td>  
-                    <td><strong>0.742</strong></td>
+                    <td>0.995</td>
+                    <td>0.699</td>  
+                    <td><strong>0.716</strong></td>
                     <td>Loan Amount Term, Loan Amount</td> 
+                    <td>Applicant Income, Co-Applicant Income</td>
                 </tr> 
                 <tr>
                     <th scope="row">4a</th>
-                    <td>No</td>
+
                     <td>200</td>
-                    <td>0.997</td>
-                    <td>0.766</td>  
-                    <td><strong>0.642</strong></td>
-                    <td>Loan Term, Loan Amount, Property Area, Education, Gender, Self-employed</td>
+                    <td>0.995</td>
+                    <td>0.668</td>  
+                    <td><strong>0.695</strong></td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                    <td>Total Income</td>
                 </tr>                
                 <tr>
                     <th scope="row">4b</th>
-                    <td>max_features=None, max_depth=None, min_samples_split=2</td>
+
                     <td>200</td>
-                    <td>0.997</td>
-                    <td>0.783</td>  
-                    <td><strong>0.675</strong></td>
-                    <td>Loan Term, Loan Amount, Property Area, Education, Gender, Self-employed</td> 
+                    <td>0.995</td>
+                    <td>0.697</td>  
+                    <td><strong>0.709</strong></td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td> 
+                    <td>Applicant Income, Co-Applicant Income</td>
                 </tr>                                                               
                 
                 </tbody>
@@ -307,19 +372,19 @@
             </div>
             <div class='col-md-3'>
 
-                <img src="/static/model_images/RF_1a.png" width="100%" </img>
+                <img src="../static/images/RF_1a.png" width="100%" </img>
             </div>
             <div class='col-md-3'>
 
-                <img src="/static/model_images/RF_2a.png"  width="100%"</img>
+                <img src="../static/images/RF_2a.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
 
-                <img src="/static/model_images/RF_3a.png"  width="100%"</img>
+                <img src="../static/images/RF_3a.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
 
-                <img src="/static/model_images/RF_4a.png"  width="100%"</img>
+                <img src="../static/images/RF_4a.png"  width="100%"</img>
             </div>
         </div>  
 
@@ -349,19 +414,19 @@
             </div>
             <div class='col-md-3'>
 
-                <img src="/static/model_images/RF_1b.png" width="100%" </img>
+                <img src="../static/images/RF_1b.png" width="100%" </img>
             </div>
             <div class='col-md-3'>
 
-                <img src="/static/model_images/RF_2b.png"  width="100%"</img>
+                <img src="../static/images/RF_2b.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
                 <h6></h6>
-                <img src="/static/model_images/RF_3b.png"  width="100%"</img>
+                <img src="../static/images/RF_3b.png"  width="100%"</img>
             </div>
             <div class='col-md-3'>
                 <h6></h6>
-                <img src="/static/model_images/RF_4b.png"  width="100%"</img>
+                <img src="../static/images/RF_4b.png"  width="100%"</img>
             </div>
         </div>                              
     </div>
@@ -377,86 +442,115 @@
         <div class="row">
             <div class="col-md-12">
                 <h3><strong>Neural Networks</strong></h3>
+                <h5><strong>All runs shown used a sequential model with 'adam' optimization, run for 60 epochs  </strong></h5>
             </div>
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">Run</th>
-                    <th scope="col">Model</th>
                     <th scope="col">Inter- mediate layers</th>                                       
                     <th scope="col">Intermediate layer description</th>
-                    <th scope="col">Final layer description</th>    
-                    <th scope="col">Optimizer</th> 
-                    <th scope="col">Loss</th>                                      
-                    <th scope="col">Metrics</th>                                       
-                    <th scope="col">Epochs</th>  
-                    <th scope="col">Shuffle</th>   
-                    <th scope="col">Loss</th>  
+                    <th scope="col">Final layer</th>                                                                                 
+                    <th scope="col">Shuffle</th> 
+                    <th scope="col">Loss</th> 
                     <th scope="col">Accuracy</th>                                          
-                    <th scope="col">Factors dropped</th>                                                                                               
+                    <th scope="col">Factors dropped</th>
+                    <th scope="col">Income term(s)used</th>                                                                                               
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Sequential</td>
+                    <th scope="row">1a</th>
                     <td>2</td>
                     <td>100 units, relu activation</td>
                     <td>2 units, softmax activation</td>  
-                    <td>adam</td>
-                    <td>categorical crossentropy</td>
-                    <td>accuracy</td>
-                    <td>60</td>
                     <td>True</td>
-                    <td>0.701</td>
-                    <td><strong>0.75</strong></td>
+                    <td>0.694</td>
+                    <td><strong>0.702</strong></td>
                     <td>None</td>
+                    <td>Total income</td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Sequential</td>
+                    <th scope="row">1b</th>
                     <td>2</td>
                     <td>100 units, relu activation</td>
                     <td>2 units, softmax activation</td>  
-                    <td>adam</td>
-                    <td>categorical crossentropy</td>
-                    <td>accuracy</td>
-                    <td>60</td>
                     <td>True</td>
-                    <td>0.701</td>
-                    <td><strong>0.7333</strong></td>
+                    <td>0.725</td>
+                    <td><strong>0.667</strong></td>
+                    <td>None</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr>
+                <tr>
+                    <th scope="row">2a</th>
+                    <td>2</td>
+                    <td>100 units, relu activation</td>
+                    <td>2 units, softmax activation</td>  
+                    <td>True</td>
+                    <td>0.664</td>
+                    <td><strong>0.688</strong></td>
                     <td>Loan Amount Term</td>
+                    <td>Total income</td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td>Sequential</td>
+                    <th scope="row">2b</th>
                     <td>2</td>
                     <td>100 units, relu activation</td>
                     <td>2 units, softmax activation</td>  
-                    <td>adam</td>
-                    <td>categorical crossentropy</td>
-                    <td>accuracy</td>
-                    <td>60</td>
                     <td>True</td>
-                    <td>0.750</td>
-                    <td><strong>0.75</strong></td>
+                    <td>0.672</td>
+                    <td><strong>0.702</strong></td>
+                    <td>Loan Amount Term</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">3a</th>
+                    <td>2</td>
+                    <td>100 units, relu activation</td>
+                    <td>2 units, softmax activation</td>  
+                    <td>True</td>
+                    <td>0.640</td>
+                    <td><strong>0.695</strong></td>
                     <td>Loan Amount Term, Loan Amount</td>
+                    <td>Total income</td>
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>Sequential</td>
+                    <th scope="row">3b</th>
+                    <td>2</td>
+                    <td>100 units, relu activation</td>
+                    <td>2 units, softmax activation</td>  
+                    <td>True</td>
+                    <td>0.788</td>
+                    <td><strong>0.667</strong></td>
+                    <td>Loan Amount Term, Loan Amount</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">4a</th>
                     <td>3</td>
                     <td>100 units, relu activation</td>
                     <td>2 units, softmax activation</td>  
-                    <td>adam</td>
-                    <td>categorical crossentropy</td>
-                    <td>accuracy</td>
-                    <td>60</td>
                     <td>True</td>
-                    <td>0.833</td>
-                    <td><strong>0.75</strong></td>
+                    <td>1.000</td>
+                    <td><strong>0.645</strong></td>
                     <td>Loan Amount Term, Loan Amount</td>
-                </tr>                    
+                    <td>Total income</td>
+                </tr> 
+                <tr>
+                    <th scope="row">4b</th>
+                    <td>3</td>
+                    <td>100 units, relu activation</td>
+                    <td>2 units, softmax activation</td>  
+                    <td>True</td>
+                    <td>0.891</td>
+                    <td><strong>0.645</strong></td>
+                    <td>Loan Amount Term, Loan Amount</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr>                 
+                
                 
                 </tbody>
             </table>
