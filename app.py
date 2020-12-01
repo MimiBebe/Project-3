@@ -104,11 +104,11 @@ def formResponse():
 
 
 
-@app.route("/test.html")
-def testRoute():
-    results = render_template("test.html")
-    return results 
-    print(predictionResult)
+# @app.route("/test.html")
+# def testRoute():
+#     results = render_template("test.html")
+#     return results 
+#     print(predictionResult)
 
 
 # serve  the map page html
