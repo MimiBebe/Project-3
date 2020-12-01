@@ -39,19 +39,19 @@ def IndexRoute():
 # serve  the data page
 @app.route("/data.html")
 def analysisRoute():
-    """This runs the browser and load the analysis route"""
+    """This runs the browser and load the data route"""
     analysisWebPage = render_template("data.html")
     return analysisWebPage    
 
 # serve  the form page
 @app.route("/form.html")
 def recomendationRoute():
-    """This runs the browser and load the recommendation route"""
+    """This runs the browser and load the form route"""
     recWebPage = render_template("form.html")
     return recWebPage    
 
+# serve the route to get the form input and return the prediction
 @app.route("/response", methods=["POST"])
-
 def formResponse():
     """This runs when form response is submited"""
     response_dict = request.json
@@ -89,6 +89,14 @@ def formResponse():
     print(predictionResult)
 
     return predictionResult
+
+# serve  any html here
+# @app.route("/form.html")
+# def recomendationRoute():
+#     """This runs the browser and load the form route"""
+#     recWebPage = render_template("form.html")
+#     return recWebPage    
+
 
 
 if __name__ == '__main__':
