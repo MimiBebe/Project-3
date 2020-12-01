@@ -45,10 +45,10 @@ def analysisRoute():
 
 # serve  the form page
 @app.route("/form.html")
-def recomendationRoute():
+def formRoute():
     """This runs the browser and load the form route"""
-    recWebPage = render_template("form.html")
-    return recWebPage    
+    formWebPage = render_template("form.html")
+    return formWebPage    
 
 # serve the route to get the form input and return the prediction
 @app.route("/response", methods=["POST"])
@@ -89,24 +89,7 @@ def formResponse():
     print(predictionResult)
 
     return predictionResult
-
-# serve  any html here
-# @app.route("/form.html")
-# def recomendationRoute():
-#     """This runs the browser and load the form route"""
-#     recWebPage = render_template("form.html")
-#     return recWebPage    
-
-
-
-
-# serve  the map page html
-@app.route("/results.html")
-def mapRoute():
-    """This runs the browser and load the map route"""
-    mapWebPage = render_template("results.html", predictionResult = predictionResult)
-    return mapWebPage    
-
+  
 
 if __name__ == '__main__':
     app.run(debug=True)
