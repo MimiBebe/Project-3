@@ -99,5 +99,14 @@ def formResponse():
 
 
 
+
+# serve  the map page html
+@app.route("/results.html")
+def mapRoute():
+    """This runs the browser and load the map route"""
+    mapWebPage = render_template("results.html", predictionResult = predictionResult)
+    return mapWebPage    
+
+
 if __name__ == '__main__':
     app.run(debug=True)
