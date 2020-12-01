@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label=<Credit_History &le; 0.5<br/>gini = 0.44<br/>samples = 422<br/>value = [138, 284]<br/>class = Approved>, fillcolor="#99cdf2"] ;
+1 [label=<Dependents &le; 0.5<br/>gini = 0.412<br/>samples = 100<br/>value = [71, 29]<br/>class = Denied>, fillcolor="#f0b48a"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<Property_Area &le; 1.5<br/>gini = 0.444<br/>samples = 57<br/>value = [38, 19]<br/>class = Denied>, fillcolor="#f2c09c"] ;
+1 -> 2 ;
+3 [label=<gini = 0.424<br/>samples = 36<br/>value = [25, 11]<br/>class = Denied>, fillcolor="#f0b890"] ;
+2 -> 3 ;
+4 [label=<gini = 0.472<br/>samples = 21<br/>value = [13, 8]<br/>class = Denied>, fillcolor="#f5cfb3"] ;
+2 -> 4 ;
+5 [label=<Dependents &le; 1.5<br/>gini = 0.357<br/>samples = 43<br/>value = [33, 10]<br/>class = Denied>, fillcolor="#eda775"] ;
+1 -> 5 ;
+6 [label=<gini = 0.266<br/>samples = 19<br/>value = [16, 3]<br/>class = Denied>, fillcolor="#ea995e"] ;
+5 -> 6 ;
+7 [label=<gini = 0.413<br/>samples = 24<br/>value = [17, 7]<br/>class = Denied>, fillcolor="#f0b58b"] ;
+5 -> 7 ;
+8 [label=<Property_Area &le; 0.5<br/>gini = 0.33<br/>samples = 322<br/>value = [67, 255]<br/>class = Approved>, fillcolor="#6db7ec"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<Dependents &le; 1.5<br/>gini = 0.407<br/>samples = 95<br/>value = [27, 68]<br/>class = Approved>, fillcolor="#88c4ef"] ;
+8 -> 9 ;
+10 [label=<gini = 0.441<br/>samples = 67<br/>value = [22, 45]<br/>class = Approved>, fillcolor="#9acdf2"] ;
+9 -> 10 ;
+11 [label=<gini = 0.293<br/>samples = 28<br/>value = [5, 23]<br/>class = Approved>, fillcolor="#64b2eb"] ;
+9 -> 11 ;
+12 [label=<Property_Area &le; 1.5<br/>gini = 0.29<br/>samples = 227<br/>value = [40, 187]<br/>class = Approved>, fillcolor="#63b2eb"] ;
+8 -> 12 ;
+13 [label=<gini = 0.235<br/>samples = 125<br/>value = [17, 108]<br/>class = Approved>, fillcolor="#58ace9"] ;
+12 -> 13 ;
+14 [label=<gini = 0.349<br/>samples = 102<br/>value = [23, 79]<br/>class = Approved>, fillcolor="#73baed"] ;
+12 -> 14 ;
+}
