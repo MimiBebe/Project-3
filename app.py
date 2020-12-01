@@ -63,12 +63,7 @@ def formResponse():
     # Casting strings to int or floats
     responseDf["totalIncome"]=responseDf["totalIncome"].astype(float)
     responseDf["LoanAmount"]=responseDf["LoanAmount"].astype(float)
-    responseDf["Loan_Amount_Term"] = responseDf["Loan_Amount_Term"].astype(float) 
-    responseDf["Dependents"] = responseDf["Dependents"].astype(int) 
 
-    # Process dependent data
-    if (responseDf["Dependents"]>= 3).any():
-        responseDf["Dependents"] = 3
 
     # data encoding map (same as in data muggling notebook but added credit score category)
     # Data encoding map
@@ -77,46 +72,23 @@ def formResponse():
                 "Y" : 1, "N": 0,\
                 "Rural": 0, "Semiurban": 1, "Urban": 2,\
                 "Not Graduate": 0, "Graduate": 1,\
-                "0": 0, "1": 1, "2": 2, "3+": 3,
-                "Poor": 0 , "Fair": 0,"Good": 1,"Excellent": 1}
+                "0": 0, "1": 1, "2": 2, "3+": 3}
 
     response_Encode = responseDf.applymap(lambda x: encodingMap.get(x) if x in encodingMap else x)
-
-    # add feature to work with selected model:
-    response_Encode["Log_TotalIncome"]= np.log(response_Encode["totalIncome"])
-    response_Encode["Log_LoanAmount"]= np.log(response_Encode["LoanAmount"])
-    response_Encode = response_Encode.drop(columns=["LoanAmount","totalIncome"])
     
     # Apply model
     prediction = classifier_from_joblib.predict(response_Encode) 
     
     # Convert prediction
     if prediction == 1:
-        predictionResult = "Congrats! We think we have a high chance of getting your mortgage loan APPROVED"
+        predictionResult = "Approved"
     else:
-        predictionResult = "Sorry! We think we have a high chance of getting your mortgage loan NOT APPROVED"
+        predictionResult = "Sorry!"
 
     # Print to terminal
     print(predictionResult)
 
-    # return render_template('form.html', prediction_text = predictionResult)
     return predictionResult
-
-
-
-@app.route("/test.html")
-def testRoute():
-    results = render_template("test.html")
-    return results 
-    print(predictionResult)
-
-
-# serve  the map page html
-@app.route("/results.html")
-def mapRoute():
-    """This runs the browser and load the map route"""
-    mapWebPage = render_template("results.html", predictionResult = predictionResult)
-    return mapWebPage    
 
 
 if __name__ == '__main__':

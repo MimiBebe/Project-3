@@ -40,19 +40,6 @@ async function nextPrev(n) {
     document.getElementById("formContainer").classList.add("d-none");
 
 
-
-    // If the user is approved for a mortgage, show this tab
-    if (Gender === "female") {
-      document.getElementById("approvedContainer").classList.remove("d-none");
-    }
-
-    else {
-    // If the user is NOT approved for a mortgage, show this tab
-    document.getElementById("notApprovedContainer").classList.remove("d-none");
-    }
-
-
-
     var response = await fetch("/response", {
       method: "POST",
       body: JSON.stringify(formData),
@@ -60,7 +47,21 @@ async function nextPrev(n) {
         'Content-Type': 'application/json'
       },
     });
-    console.log(await response.text());
+
+    var predict = await response.text();
+
+    // console
+    console.log(predict);
+
+    // If the user is approved for a mortgage, show this tab
+    if (predict === "Approved") {
+      document.getElementById("approvedContainer").classList.remove("d-none");
+    }
+
+    else {
+      // If the user is NOT approved for a mortgage, show this tab
+      document.getElementById("notApprovedContainer").classList.remove("d-none");
+    }
 
     // console.log(formData);
     // console.log(response);
