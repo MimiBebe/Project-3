@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Project 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</head>
+
+<body>
+    <header>
+
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1X6XpEzb99zK4lCrrv7xvqCQOqxmf2qAjjQ&usqp=CAU"
+                    width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="form.html">See if you Qualify</a>
+                    <a class="nav-item nav-link" href="models_BJM.html">Our Models</a>
+                    <a class="nav-item nav-link" href="data.html">Training Data</a>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- End of Navbar -->
+
+        <!-- NOTE: The template for this page uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image -->
+
+        <!-- Full Page Intro -->
+        <div class="view"
+            style="background-image: url('../static/images/house.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+            <!-- Content -->
+            <div class="container">
+                <!--Grid row-->
+                <div class="row mt-12">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+                        <div class="data-pages">
+                            <div class="card-body">
+                                <h2><strong>Prediction Model Exploration</strong></h2>
+                                <p class="text-justify">*** different types of models were tested: Logistic Regression, KNeighbors Classifier, Decision Trees, Random Forests, 
+                                    and Neural Networks. <br>
+                                    Within each, several different factor combinations were tried: <br><br>
+                                    -- Income was treated as Total Income, as separate terms for Applicant and Co-Applicant Income, and/or as log(Total Income).<br><br>
+                                    -- Because we do not know what Loan Amounts or Loan Terms the applicants requested vs. what they received, and an applicant 
+                                    requesting too large a loan might be denied despite otherwise favorable attributes, some models were tested both with and 
+                                    without these terms. <br><br>
+                                    -- The Random Forest runs found several terms (Gender, Education, Self_Employed, Married) of consistently low importance, 
+                                    so some of the other models were tested both with and without this set.<br><br>
+                                Factors specific to some of the different model types were also varied, discussed below.<br><br>
+                                Overall, most test accuracies were in the range of 0.7 - 0.8, and income and credit score were the primary deciding variables.
+                                 Including more terms or longer model runs did not necessarily improve accuracy; this could be an example of "overtraining", 
+                                 with models too well adjusted to the training subset to work well on the test subset.
+                                </p>               
+
+                                <a href="#" type="button" class="btn btn-light">Logistic Regression</a>
+                                <a href="k_Nearest_Neighbors.html" type="button" class="btn btn-light">KNeighbors Classifier</a>
+                                <a href="decision_trees.html" type="button" class="btn btn-light">Decision Trees</a>
+                                <a href="random_forests.html" type="button" class="btn btn-light">Random Forests</a>
+                                <a href="neural_networks.html" type="button" class="btn btn-light">Neural Networks</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -49,37 +49,400 @@
                     <!--Grid column-->
                     <div class="col-md-12">
                         <div class="data-pages">
-                            <div class="card-body">
-                                <h2>Loan Statistics - Education</h2>
-                                <img src="../static/images/Education_pieStats.png" alt="Loan Requests by Education"
-                                    width="460" height="460">
-                                <img src="../static/images/Education_barStats.png" alt="Loan Requests by Education"
-                                    width="460" height="460">
-
-                                <p>Of all the loan applicants in our model, 78.7% graduated from college, while 21.3%
-                                    did not.<br>
-                                    As you can see from the loan approval chart, loan applicants who had a college
-                                    education were approved at a noticably higher rate.<br>
-                                    Typically (but not in all cases) people who graduate from college tend to make more
-                                    money, which may factor into why the loan approval rate was higher for these
-                                    applicants.</p>
-
-                                <div class="dropdown">
-                                    <button class="dropbtn">Click Here for Other Examples</button>
-                                    <div class="dropdown-content">
-                                        <a href="maritalstatus.html">Marital Status</a>
-                                        <a href="gender.html">Gender</a>
-                                        <a href="data.html">Back to Main Page</a>
-                                    </div>
-                                </div>
-
-
+                            <div class="card-body">           
 
                                 <a href="#" type="button" class="btn btn-light">Logistic Regression</a>
                                 <a href="#" type="button" class="btn btn-light">KNeighbors Classifier</a>
                                 <a href="#" type="button" class="btn btn-light">Decision Trees</a>
                                 <a href="#" type="button" class="btn btn-light">Random Forests</a>
                                 <a href="#" type="button" class="btn btn-light">Neural Networks</a>
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1> </h1>
+                                            <h1> </h1>
+                                            <h1> </h1>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <pre>&#9</pre>
+                                            </div>
+                                            <h3><strong>Decision Trees</strong></h3>
+                                            <p class="text-justify">. <br>
+                                                Higher scores were generally achieved here by limiting tree depth; the deeper trees may be
+                                                overtrained. An exception to this
+                                                pattern is seen in Group 5, where a limited tree depth was combined with a limited set of data
+                                                factors. In this case tree
+                                                depth had no apparent effect, with most discrimination achieved by the Credit History variable in
+                                                the first layer.<br>
+                                            </p>
+                                        </div>
+                                        <table class="table table-striped table-bordered table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Decision Tree</th>
+                                                    <th scope="col">Maximum depth</th>
+                                                    <th scope="col">Test score</th>
+                                                    <th scope="col">Factors dropped</th>
+                                                    <th scope="col">Income term(s)used</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1a</th>
+                                                    <td>(not set)</td>
+                                                    <td><strong>0.673</strong></td>
+                                                    <td>None</td>
+                                                    <td>Total income</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1b</th>
+                                                    <td>3</td>
+                                                    <td><strong>0.730</strong></td>
+                                                    <td>None</td>
+                                                    <td>Total income</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1c</th>
+                                                    <td>4</td>
+                                                    <td><strong>0.737</strong></td>
+                                                    <td>None</td>
+                                                    <td>Total income</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1d</th>
+                                                    <td>5</td>
+                                                    <td><strong>0.716</strong></td>
+                                                    <td>None</td>
+                                                    <td>Total income</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2a</th>
+                                                    <td>(not set)</td>
+                                                    <td><strong>0.589</strong></td>
+                                                    <td>Loan Term, Loan Amount</td>
+                                                    <td>Total Income </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2b</th>
+                                                    <td>3</td>
+                                                    <td><strong>0.752</strong></td>
+                                                    <td>Loan Term, Loan Amount</td>
+                                                    <td>Total Income </td>
+                                                </tr>
+                                                <th scope="row">2c</th>
+                                                <td>4</td>
+                                                <td><strong>0.737</strong></td>
+                                                <td>Loan Term, Loan Amount</td>
+                                                <td>Total Income </td>
+                                                </tr>
+                                                </tr>
+                                                <th scope="row">2d</th>
+                                                <td>5</td>
+                                                <td><strong>0.730</strong></td>
+                                                <td>Loan Term, Loan Amount</td>
+                                                <td>Total Income </td>
+                                                </tr>
+                            
+                                                <tr>
+                                                    <th scope="row">3a</th>
+                                                    <td>(not set)</td>
+                                                    <td><strong>0.667</strong></td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>Total Income </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3b</th>
+                                                    <td>3</td>
+                                                    <td><strong>
+                                                            <h4>0.759</h4>
+                                                        </strong></td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>Total Income </td>
+                                                </tr>
+                                                <th scope="row">3c</th>
+                                                <td>4</td>
+                                                <td><strong>0.752</strong></td>
+                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                <td>Total Income </td>
+                                                </tr>
+                                                </tr>
+                                                <th scope="row">3d</th>
+                                                <td>5</td>
+                                                <td><strong>
+                                                        <h4>0.759</h4>
+                                                    </strong></td>
+                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                <td>Total Income </td>
+                                                </tr>
+                            
+                                                <tr>
+                                                    <th scope="row">4a</th>
+                                                    <td>(not set)</td>
+                                                    <td><strong>0.581</strong></td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4b</th>
+                                                    <td>3</td>
+                                                    <td><strong>0.738</strong></td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
+                                                </tr>
+                                                <th scope="row">4c</th>
+                                                <td>4</td>
+                                                <td><strong>0.723</strong></td>
+                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                <td>Applicant Income, Co-Applicant Income</td>
+                                                </tr>
+                                                </tr>
+                                                <th scope="row">4d</th>
+                                                <td>5</td>
+                                                <td><strong>0.716</strong></td>
+                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                <td>Applicant Income, Co-Applicant Income</td>
+                                                </tr>
+                            
+                                                <tr>
+                                                    <th scope="row">5a</th>
+                                                    <td>(not set)</td>
+                                                    <td><strong>0.745</strong></td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>log(Total Income)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5b</th>
+                                                    <td>1</td>
+                                                    <td><strong>0.745</strong></td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>log(Total Income)</td>
+                                                </tr>
+                                                <th scope="row">5c</th>
+                                                <td>2</td>
+                                                <td><strong>0.745</strong></td>
+                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                <td>log(Total Income)</td>
+                                                </tr>
+                                                </tr>
+                                                <th scope="row">5d</th>
+                                                <td>3</td>
+                                                <td><strong>0.745</strong></td>
+                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                <td>log(Total Income)</td>
+                                                </tr>
+                            
+                                                <tr>
+                                                    <th scope="row">6a</th>
+                                                    <td>(not set)</td>
+                                                    <td><strong>0.674</strong></td>
+                                                    <td>None</td>
+                                                    <td>log(Total Income)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6b</th>
+                                                    <td>1</td>
+                                                    <td><strong>0.730</strong></td>
+                                                    <td>None</td>
+                                                    <td>log(Total Income)</td>
+                                                </tr>
+                                                <th scope="row">6c</th>
+                                                <td>2</td>
+                                                <td><strong>0.730</strong></td>
+                                                <td>None</td>
+                                                <td>log(Total Income)</td>
+                                                </tr>
+                                                </tr>
+                                                <th scope="row">6d</th>
+                                                <td>3</td>
+                                                <td><strong>0.716</strong></td>
+                                                <td>None</td>
+                                                <td>log(Total Income)</td>
+                                                </tr>
+                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h4>Decision tree paths (orange = denied, blue = approved)</h4>
+                                        </div>
+                                        <div class="row">
+                                            <pre>&#9</pre>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>1. Total Income </h5>
+                                            <h5>&emsp;All factors</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;"> a) Test score 0.673</h6>
+                                            <img src="../static/images/Decision_tree_1a.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">b) Test score 0.730</h6>
+                                            <img src="../static/images/Decision_tree_1b.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">c) Test score 0.737</h6>
+                                            <img src="../static/images/Decision_tree_1c.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">d) Test score 0.716</h6>
+                                            <img src="../static/images/Decision_tree_1d.png" width="100%" </img>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <pre>&#9</pre>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6> </h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>2. Total income</h5>
+                                            <h5>&emsp;Loan Term and Loan Amount removed</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">a) Test score 0.589</h6>
+                                            <img src="../static/images/Decision_tree_2a.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">b) Test score 0.752</h6>
+                                            <img src="../static/images/Decision_tree_2b.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">c) Test score 0.737</h6>
+                                            <img src="../static/images/Decision_tree_2c.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">d) Test score 0.730</h6>
+                                            <img src="../static/images/Decision_tree_2d.png" width="100%" </img>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="row">
+                                        <pre>&#9</pre>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6> </h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>3. Total income</h5>
+                                            <h5>&emsp;Loan Term, Loan Amount, Gender, Education, Self_Employed, and Married removed</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">a) Test score 0.667</h6>
+                                            <img src="../static/images/Decision_tree_3a.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h4 style="text-align:center;">b) Test score 0.759</h4>
+                                            <img src="../static/images/Decision_tree_3b.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">c) Test score 0.752</h6>
+                                            <img src="../static/images/Decision_tree_3c.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h4 style="text-align:center;">d) Test score 0.759</h4>
+                                            <img src="../static/images/Decision_tree_3d.png" width="100%" </img>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <pre>&#9</pre>
+                                    </div>
+                            
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6> </h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>4. Applicant and Co-Applicant incomes separate</h5>
+                                            <h5>&emsp;Loan Term, Loan Amount, Gender, Education, Self_Employed, and Married removed</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">a) Test score 0.581</h6>
+                                            <img src="../static/images/Decision_tree_4a.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;"> b) Test score 0.738</h6>
+                                            <img src="../static/images/Decision_tree_4b.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;"> c) Test score 0.723</h6>
+                                            <img src="../static/images/Decision_tree_4c.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">d) Test score 0.716</h6>
+                                            <img src="../static/images/Decision_tree_4d.png" width="100%" </img>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="row">
+                                        <pre>&#9</pre>
+                                    </div>
+                            
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6> </h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>5. log(Total Income)</h5>
+                                            <h5>&emsp;Loan Term, Loan Amount, Gender, Education, Self_Employed, and Married removed</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">a) Test score 0.745</h6>
+                                            <img src="../static/images/Decision_tree_5a.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">b) Test score 0.745</h6>
+                                            <img src="../static/images/Decision_tree_5b.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">c) Test score 0.745</h6>
+                                            <img src="../static/images/Decision_tree_5c.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">d) Test score 0.745</h6>
+                                            <img src="../static/images/Decision_tree_5d.png" width="100%" </img>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <pre>&#9</pre>
+                                    </div>
+                            
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6> </h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>6. log(Total Income)</h5>
+                                            <h5>&emsp;All factors</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">a) Test score 0.674</h6>
+                                            <img src="../static/images/Decision_tree_6a.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">b) Test score 0.730</h6>
+                                            <img src="../static/images/Decision_tree_6b.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">c) Test score 0.730</h6>
+                                            <img src="../static/images/Decision_tree_6c.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">d) Test score 0.716</h6>
+                                            <img src="../static/images/Decision_tree_6d.png" width="100%" </img>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                            
+
                             </div>
                         </div>
                     </div>
