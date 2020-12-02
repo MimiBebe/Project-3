@@ -15,7 +15,7 @@ body {
 
 /* Removes padding at the top of the page */
         .mt-5 {
-          margin-top: 1rem!important;
+          margin-top: 0rem!important;
         }
 
 /* Style the radio buttons */
