@@ -4,43 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>% Approved by Gender</title>
-    <link rel="stylesheet" href="../static/css/style_data.css">
-  
-    
+
+    <title>Project 3</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <link rel="stylesheet" href="../static/css/style_data.css">
 
 </head>
 
 <body>
+    <header>
 
-    <!-- Full Page Intro -->
-    <div class="view"
 
-    
-    <div class="head"></div>
-    <h2>Loan Statistics - Gender</h2>    
-        
-        <img src="../static/images/Gender_pieStats.png" alt="Loan Requests by Gender" width="460" height="460">
-        <img src="../static/images/Gender_barStats.png" alt="Loan Requests by Gender" width="460" height="460">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1X6XpEzb99zK4lCrrv7xvqCQOqxmf2qAjjQ&usqp=CAU"
+                    width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="form.html">See if you Qualify</a>
+                    <a class="nav-item nav-link" href="models_BJM.html">Our Models</a>
+                    <a class="nav-item nav-link" href="data.html">Training Data</a>
 
-        <p>Of all the loan applicants in our model, 81.2% were male, while 18.8% were female.<br>
-        As you can see from the loan approval chart, percentage of loans approved by gender were very similar.<br>
-        From this data, we can assume gender was not a significant factor in the loan approval process.</p>
-
-        <div class="dropdown">
-            <button class="dropbtn">Click Here for Other Examples</button>
-            <div class="dropdown-content">
-                <a href="education.html">Education</a>
-                <a href="maritalstatus.html">Marital Status</a>
-                <a href="data.html">Back to Main Page</a>
-                <a href="credithistory.html">Credit History</a>
-                <a href="loanamount.html">Loan Amount</a>
+                </ul>
             </div>
-        
-    
+        </nav>
+        <!-- End of Navbar -->
+
+        <!-- NOTE: The template for this page uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image -->
+
+        <!-- Full Page Intro -->
+        <div class="view"
+            style="background-image: url('../static/images/house.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+            <!-- Content -->
+            <div class="container">
+                <!--Grid row-->
+                <div class="row mt-12">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+                        <div class="data-pages">
+                            <div class="card-body">
+
+                                <div class="dropdown">
+                                    <button class="dropbtn">Click Here for Other Examples</button>
+                                    <div class="dropdown-content">
+                                        <a href="data.html">Back to Main Page</a>
+                                        <a href="maritalstatus.html">Marital Status</a>
+                                        <a href="credithistory.html">Credit History</a>
+                                        <a href="loanamount.html">Loan Amount</a>
+                                        <a href="gender.html">Gender</a>
+                                    </div>
+                                </div>
+
+                                <!-- Full Page Intro -->
+                                <div class="view">
+                                    <h2>Loan Statistics - Gender</h2>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <img src="../static/images/Gender_pieStats.png"
+                                                    alt="Loan Requests by Gender" width="400" height="400">
+
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <img src="../static/images/Gender_barStats.png"
+                                                    alt="Loan Requests by Gender" width="400" height="400">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Of all the loan applicants in our model, 81.2% were male, while 18.8% were
+                                    female.<br>
+                                    As you can see from the loan approval chart, percentage of loans approved by gender
+                                    were very similar.<br>
+                                    From this data, we can assume gender was not a significant factor in the loan
+                                    approval process.</p>
+
+                            </div>
+
+
+                            <!-- end of content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+
+
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
@@ -52,9 +117,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-
-    </div>
-</div>
 
 </body>
 
