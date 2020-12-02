@@ -89,7 +89,83 @@ def formResponse():
     print(predictionResult)
 
     return predictionResult
-  
+
+# serve  the credit page
+@app.route("/credithistory.html")
+def creditRoute():
+    """This runs the browser and load the credit history route"""
+    creditWebPage = render_template("credithistory.html")
+    return creditWebPage    
+
+# serve thr decision tree page
+@app.route("/decision_trees.html")
+def dtRoute():
+    """This runs the browser and load the decision tree route"""
+    dtWebPage = render_template("decision_trees.html")
+    return dtWebPage    
+
+# serve  the education page
+@app.route("/education.html")
+def eduRoute():
+    """This runs the browser and load the education route"""
+    eduWebPage = render_template("education.html")
+    return eduWebPage 
+
+# serve  the gender page
+@app.route("/gender.html")
+def genderRoute():
+    """This runs the browser and load the gender route"""
+    genderWebPage = render_template("gender.html")
+    return genderWebPage 
+
+# serve  the gender page
+@app.route("/k_Nearest_Neighbors.html")
+def kNRoute():
+    """This runs the browser and load the k_Nearest_Neighbors route"""
+    kNWebPage = render_template("k_Nearest_Neighbors.html")
+    return kNWebPage 
+
+# serve  the loan page
+@app.route("/loanamount.html")
+def loanRoute():
+    """This runs the browser and load the loanamount route"""
+    loanWebPage = render_template("loanamount.html")
+    return loanWebPage 
+
+# serve  the logistic-regression page
+@app.route("/logistic-regression.html")
+def logRRoute():
+    """This runs the browser and load the logistic-regression route"""
+    logisRWebPage = render_template("logistic-regression.html")
+    return logisRWebPage 
+
+# serve  the marriage status page
+@app.route("/maritalstatus.html")
+def marriageRoute():
+    """This runs the browser and load the maritalstatus route"""
+    marriageWebPage = render_template("maritalstatus.html")
+    return marriageWebPage 
+
+# serve  the model intro page
+@app.route("/model_intro.html")
+def modelsRoute():
+    """This runs the browser and load the model_intro route"""
+    modelsWebPage = render_template("model_intro.html")
+    return modelsWebPage 
+
+# serve  the neural_networks page
+@app.route("/neural_networks.html")
+def neuronetRoute():
+    """This runs the browser and load the neural_networks route"""
+    neuronetWebPage = render_template("neural_networks.html")
+    return neuronetWebPage 
+
+# serve  the random_forests page
+@app.route("/random_forests.html")
+def ranforRoute():
+    """This runs the browser and load the random_forests route"""
+    ranforWebPage = render_template("random_forests.html")
+    return ranforWebPage 
 
 if __name__ == '__main__':
     app.run(debug=True)
