@@ -76,9 +76,18 @@ body {
           background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
         }
         
+
+        
         .card {
           background-color: rgba(96, 50, 53, 0.85);
         }
+
+        .data-pages {
+          background-color: rgba(248, 249, 250, 0.95);
+
+
+        }
+
         
         .md-form label {
           color: #ffffff;
