@@ -16,6 +16,23 @@
 
 <body>
     <header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1X6XpEzb99zK4lCrrv7xvqCQOqxmf2qAjjQ&usqp=CAU"
+                    width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="form.html">See if you Qualify</a>
+                    <a class="nav-item nav-link" href="models_BJM.html">Our Models</a>
+                    <a class="nav-item nav-link" href="data.html">Training Data</a>
+                </ul>
+            </div>
+        </nav>
+        <!-- End of Navbar -->
+
         <!-- NOTE: The template for this page uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image -->
 
         <!-- Full Page Intro -->
@@ -45,7 +62,8 @@
                                     <!-- Form Input: Gender -->
                                     <div class="form-group">
                                         <div id="genderButtons" class="form-check form-check-inline">
-                                            <label class="button-label text-white" for="genderButtons">Gender:</label>
+                                            <label class="button-label text-white" for="genderButtons"
+                                                required>Gender:</label>
 
                                             <div class="custom-control custom-radio text-white">
                                                 <input type="radio" class="custom-control-input" id="femaleRadioButton"
@@ -58,6 +76,9 @@
                                                 <input type="radio" class="custom-control-input" id="maleRadioButton"
                                                     name="genderRadios">
                                                 <label class="custom-control-label" for="maleRadioButton">Male</label>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid city.
                                             </div>
                                         </div>
                                     </div>
@@ -146,10 +167,10 @@
                                             <label class="text-white" for="creditDropdown">Credit History</label>
                                             <select class="form-control" id="creditDropdown">
                                                 <option value="" disabled selected>select your credit history</option>
-                                                <option value="poorCredit">Poor</option>
-                                                <option>Fair</option>
-                                                <option>Good</option>
-                                                <option>Excellent</option>
+                                                <option value="0">Poor</option>
+                                                <option value="0">Fair</option>
+                                                <option value="1">Good</option>
+                                                <option value="1">Excellent</option>
                                             </select>
                                         </div>
                                     </div>
@@ -159,8 +180,9 @@
                                         <div id="totalIncome" class="form-check form-check-inline needs-validation">
                                             <label class="text-white" for="totalIncome">Gross Annual Income</label>
                                             <input class="form-control" type="text"
-                                                placeholder="(include co-applicant's income)" required>
- 
+                                                placeholder="(include co-applicant's income)" id="totalIncomeInput"
+                                                required>
+
                                         </div>
                                     </div>
                                 </div> <!-- End of Step 1 of the form -->
@@ -203,7 +225,7 @@
                                     <div class="form-group">
                                         <div id="loanAmount" class="form-check form-check-inline">
                                             <label class="text-white" for="loanAmount">Loan Amount</label>
-                                            <input class="form-control" type="text" placeholder="">
+                                            <input class="form-control" type="text" placeholder="" id="loanAmountInput">
                                         </div>
                                     </div>
 
@@ -244,29 +266,48 @@
             </div>
             <!-- Content -->
 
-            <!-- Content -->
-            <div class="container d-none" id="resultsContainer">
-                <!--Grid row-->
+            <!-- Approved Tab (This tab remains hidden until the user submits the form and is approved for a loan)  -->
+            <div class="container d-none" id="approvedContainer">
                 <div class="row mt-5">
-
-                    <!-- Results page -->
                     <div class="col-md-6 col-xl-5 mb-4">
                         <div class="card wow fadeInRight" data-wow-delay="0.3s">
                             <div class="card-body text-white">
-                                <h1>Congrats! you qualify!</h1>
-                                <h1>OR sorry, you don't qualify</h1>
-                                <p>include a short explanation here of why our model decided that the user did or didn't
-                                    qualify</p>
+                                <h2>Congrats! You qualify!</h2>
+                                <p>According to our model, you are likely to get approved for this mortgage.</p>
+                                <p>Click below to try again or learn more about how our machine learning model arrived
+                                    at this result.</p>
                                 <a href="form.html" type="button" class="btn btn-light">Try Again</a>
-                                <a href="data.html" type="button" class="btn btn-light">Our Machine Learning Model</a>
-
+                                <a href="models_BJM.html" type="button" class="btn btn-light">Our Models</a>
+                                <a href="data.html" type="button" class="btn btn-light">Training Data</a>
                             </div>
                         </div>
-                        <!-- Full Page Intro -->
                     </div>
-                    <!-- End of Results page -->
                 </div>
             </div>
+            <!-- End of Approved tab -->
+
+
+            <!-- Not Approved tab -->
+            <div class="container d-none" id="notApprovedContainer">
+                <!--Grid row-->
+                <div class="row mt-5">
+                    <div class="col-md-6 col-xl-5 mb-4">
+                        <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="card-body text-white">
+                                <h2>Sorry! You don't qualify.</h2>
+                                <p>According to our model, you likely would not qualify for this mortgage.</p>
+                                <p>Click below to try again or learn more about how our machine learning model arrived
+                                    at this result.</p>
+                                <a href="form.html" type="button" class="btn btn-light">Try Again</a>
+                                <a href="models_BJM.html" type="button" class="btn btn-light">Our Models</a>
+                                <a href="data.html" type="button" class="btn btn-light">Training Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Not Approved Tab -->
+
         </div>
     </header>
 
@@ -275,7 +316,7 @@
 
 
 
-    <script type="text/javascript" src="../static/js/test-json.js"></script>
+    <script type="text/javascript" src="../static/js/results-json.js"></script>
 
     <script type="text/javascript" src="../static/js/form.js"></script>
 

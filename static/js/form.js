@@ -39,8 +39,6 @@ async function nextPrev(n) {
     // This changes the content on the page from form to results
     document.getElementById("formContainer").classList.add("d-none");
 
-    document.getElementById("resultsContainer").classList.remove("d-none");
-
 
     var response = await fetch("/response", {
       method: "POST",
@@ -49,21 +47,28 @@ async function nextPrev(n) {
         'Content-Type': 'application/json'
       },
     });
-    console.log(await response.text());
 
-    // This changes the content on the page from form to results
-    // document.getElementById("formContainer").classList.add("d-none");
+    var predict = await response.text();
 
-    // document.getElementById("resultsContainer").classList.remove("d-none");
+    // console
+    console.log(predict);
 
+    // If the user is approved for a mortgage, show this tab
+    if (predict === "Approved") {
+      document.getElementById("approvedContainer").classList.remove("d-none");
+    }
 
-    // window.location.replace("results.html");
+    else {
+      // If the user is NOT approved for a mortgage, show this tab
+      document.getElementById("notApprovedContainer").classList.remove("d-none");
+    }
 
+    // console.log(formData);
+    // console.log(response);
     // document.getElementById("regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
-
   showTab(currentTab);
 }
 
@@ -71,7 +76,13 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
+
+  // the selects the input fields
   y = x[currentTab].getElementsByTagName("input");
+
+  // this selects the dropdown fields
+  d = x[currentTab].getElementsByTagName("select");
+
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
@@ -82,12 +93,31 @@ function validateForm() {
       valid = false;
     }
   }
+
+
+
+  // Validate the dropdown fields (Credit History and Term of Loan)
+  for (i = 0; i < d.length; i++) {
+    // If a field is empty...
+    if (d[i].value == "") {
+      // add an "invalid" class to the field:
+      d[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+      document.getElementById('creditDropdown').style.backgroundColor = "#FFDDDD";
+    }
+    else {
+      document.getElementById('creditDropdown').style.backgroundColor = "white";
+    }
+  }
+
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return valid; // return the valid status
 }
+
 
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...

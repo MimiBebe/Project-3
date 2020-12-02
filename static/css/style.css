@@ -6,9 +6,12 @@ body {
 
 
 
-
 /* CSS for multi step form: https://www.w3schools.com/howto/howto_js_form_steps.asp */
 
+/* Removes padding at the top of the page */
+        .mt-5 {
+          margin-top: 0rem!important;
+        }
 
 /* Style the radio buttons */
         .custom-radio {
@@ -25,6 +28,7 @@ body {
 /* Style the Form */
         .form-header {
           color: #E0BB4E;
+  
         }
 
 
