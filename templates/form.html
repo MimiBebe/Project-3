@@ -16,6 +16,23 @@
 
 <body>
     <header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1X6XpEzb99zK4lCrrv7xvqCQOqxmf2qAjjQ&usqp=CAU"
+                    width="30" height="30" class="d-inline-block align-top" alt="">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="form.html">See if you Qualify</a>
+                    <a class="nav-item nav-link" href="models_BJM.html">Our Models</a>
+                    <a class="nav-item nav-link" href="data.html">Training Data</a>
+                </ul>
+            </div>
+        </nav>
+        <!-- End of Navbar -->
+
         <!-- NOTE: The template for this page uses code from https://mdbootstrap.com/docs/jquery/css/background-image/ for the general page layout and CSS of the background image -->
 
         <!-- Full Page Intro -->
@@ -23,7 +40,7 @@
             style="background-image: url('../static/images/house.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
             <!-- Content -->
-            <div class="container">
+            <div class="container" id="formContainer">
                 <!--Grid row-->
                 <div class="row mt-5">
 
@@ -45,7 +62,8 @@
                                     <!-- Form Input: Gender -->
                                     <div class="form-group">
                                         <div id="genderButtons" class="form-check form-check-inline">
-                                            <label class="button-label text-white" for="genderButtons">Gender:</label>
+                                            <label class="button-label text-white" for="genderButtons"
+                                                required>Gender:</label>
 
                                             <div class="custom-control custom-radio text-white">
                                                 <input type="radio" class="custom-control-input" id="femaleRadioButton"
@@ -58,6 +76,9 @@
                                                 <input type="radio" class="custom-control-input" id="maleRadioButton"
                                                     name="genderRadios">
                                                 <label class="custom-control-label" for="maleRadioButton">Male</label>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid city.
                                             </div>
                                         </div>
                                     </div>
@@ -105,19 +126,18 @@
                                     <!-- Form Input: Education Level -->
                                     <div class="form-group">
                                         <div id="educationButtons" class="form-check form-check-inline">
-                                            <label class="button-label text-white" for="educationButtons">Did you graduate high school?</label>
+                                            <label class="button-label text-white" for="educationButtons">Did you
+                                                graduate high school?</label>
                                             <div class="custom-control custom-radio text-white">
-                                                <input type="radio" class="custom-control-input"
-                                                    id="graduateButton" name="educationRadios">
-                                                <label class="custom-control-label"
-                                                    for="graduateButton">Yes</label>
+                                                <input type="radio" class="custom-control-input" id="graduateButton"
+                                                    name="educationRadios">
+                                                <label class="custom-control-label" for="graduateButton">Yes</label>
                                             </div>
 
                                             <div class="custom-control custom-radio text-white">
-                                                <input type="radio" class="custom-control-input"
-                                                    id="notGraduateButton" name="educationRadios">
-                                                <label class="custom-control-label"
-                                                    for="notGraduateButton">No</label>
+                                                <input type="radio" class="custom-control-input" id="notGraduateButton"
+                                                    name="educationRadios">
+                                                <label class="custom-control-label" for="notGraduateButton">No</label>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +152,8 @@
                                                 <button
                                                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                                                     class="minus"></button>
-                                                <input class="quantity" min="0" name="quantity" value="0" type="number" id="dependentCounter">
+                                                <input class="quantity" min="0" name="quantity" value="0" type="number"
+                                                    id="dependentCounter">
                                                 <button
                                                     onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                                                     class="plus"></button>
@@ -143,13 +164,13 @@
                                     <!-- Form Input: Credit History -->
                                     <div class="form-group">
                                         <div id="creditHistory" class="form-check form-check-inline">
-                                            <label class="text-white" for="sel1">Credit History</label>
-                                            <select class="form-control" id="sel1">
+                                            <label class="text-white" for="creditDropdown">Credit History</label>
+                                            <select class="form-control" id="creditDropdown">
                                                 <option value="" disabled selected>select your credit history</option>
-                                                <option>Poor</option>
-                                                <option>Fair</option>
-                                                <option>Good</option>
-                                                <option>Excellent</option>
+                                                <option value="0">Poor</option>
+                                                <option value="0">Fair</option>
+                                                <option value="1">Good</option>
+                                                <option value="1">Excellent</option>
                                             </select>
                                         </div>
                                     </div>
@@ -159,8 +180,9 @@
                                         <div id="totalIncome" class="form-check form-check-inline needs-validation">
                                             <label class="text-white" for="totalIncome">Gross Annual Income</label>
                                             <input class="form-control" type="text"
-                                                placeholder="(include co-applicant's income)" required>
- 
+                                                placeholder="(include co-applicant's income)" id="totalIncomeInput"
+                                                required>
+
                                         </div>
                                     </div>
                                 </div> <!-- End of Step 1 of the form -->
@@ -203,7 +225,7 @@
                                     <div class="form-group">
                                         <div id="loanAmount" class="form-check form-check-inline">
                                             <label class="text-white" for="loanAmount">Loan Amount</label>
-                                            <input class="form-control" type="text" placeholder="">
+                                            <input class="form-control" type="text" placeholder="" id="loanAmountInput">
                                         </div>
                                     </div>
 
@@ -243,37 +265,60 @@
                 <!--Grid row-->
             </div>
             <!-- Content -->
-        </div>
-        <!-- Mask & flexbox options-->
-        </div>
-        <!-- Full Page Intro -->
-    </header>
-    <!-- Main navigation -->
-    <!--Main Layout-->
 
-
-    <!-- Additional text area, if needed -->
-    <!-- <main>
-        <div class="container">
-            <div class="row py-5">
-                <div class="col-md-12 text-center">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <!-- Approved Tab (This tab remains hidden until the user submits the form and is approved for a loan)  -->
+            <div class="container d-none" id="approvedContainer">
+                <div class="row mt-5">
+                    <div class="col-md-6 col-xl-5 mb-4">
+                        <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="card-body text-white">
+                                <h2>Congrats! You qualify!</h2>
+                                <p>According to our model, you are likely to get approved for this mortgage.</p>
+                                <p>Click below to try again or learn more about how our machine learning model arrived
+                                    at this result.</p>
+                                <a href="form.html" type="button" class="btn btn-light">Try Again</a>
+                                <a href="models_BJM.html" type="button" class="btn btn-light">Our Models</a>
+                                <a href="data.html" type="button" class="btn btn-light">Training Data</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- End of Approved tab -->
+
+
+            <!-- Not Approved tab -->
+            <div class="container d-none" id="notApprovedContainer">
+                <!--Grid row-->
+                <div class="row mt-5">
+                    <div class="col-md-6 col-xl-5 mb-4">
+                        <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                            <div class="card-body text-white">
+                                <h2>Sorry! You don't qualify.</h2>
+                                <p>According to our model, you likely would not qualify for this mortgage.</p>
+                                <p>Click below to try again or learn more about how our machine learning model arrived
+                                    at this result.</p>
+                                <a href="form.html" type="button" class="btn btn-light">Try Again</a>
+                                <a href="models_BJM.html" type="button" class="btn btn-light">Our Models</a>
+                                <a href="data.html" type="button" class="btn btn-light">Training Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Not Approved Tab -->
+
         </div>
-    </main> -->
+    </header>
 
 
 
-    <script type="text/javascript" src="../static/js/test-json.js"></script>
+
+
+
+    <script type="text/javascript" src="../static/js/results-json.js"></script>
 
     <script type="text/javascript" src="../static/js/form.js"></script>
-
-
 
 
     <!-- Bootstrap JS -->
