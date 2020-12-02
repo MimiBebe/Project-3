@@ -20,10 +20,10 @@ edge [fontname=helvetica] ;
 7 -> 8 ;
 9 [label=<gini = 0.444<br/>samples = 6<br/>value = [4, 2]<br/>class = Denied>, fillcolor="#f2c09c"] ;
 7 -> 9 ;
-10 [label=<LogTotalIncome &le; 8.218<br/>gini = 0.32<br/>samples = 5<br/>value = [4, 1]<br/>class = Denied>, fillcolor="#eca06a"] ;
+10 [label=<Married &le; 0.5<br/>gini = 0.32<br/>samples = 5<br/>value = [4, 1]<br/>class = Denied>, fillcolor="#eca06a"] ;
 6 -> 10 ;
-11 [label=<gini = 0.5<br/>samples = 2<br/>value = [1, 1]<br/>class = Denied>, fillcolor="#ffffff"] ;
+11 [label=<gini = 0.0<br/>samples = 3<br/>value = [3, 0]<br/>class = Denied>, fillcolor="#e58139"] ;
 10 -> 11 ;
-12 [label=<gini = 0.0<br/>samples = 3<br/>value = [3, 0]<br/>class = Denied>, fillcolor="#e58139"] ;
+12 [label=<gini = 0.5<br/>samples = 2<br/>value = [1, 1]<br/>class = Denied>, fillcolor="#ffffff"] ;
 10 -> 12 ;
 }

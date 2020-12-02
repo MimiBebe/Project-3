@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Project 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Our CSS  -->
+    <link rel="stylesheet" href="../static/css/style_models_BJM.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>   </h1>                
+                <h1>   </h1>                
+                <h1>   </h1>                
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row"> <pre>&#9</pre></div> 
+                <h3><strong>Random Forests</strong></h3>
+                <p class="text-justify">For the random forests shown here, only the data factors were varied, as discussed above.<br> 
+                    Although the random state was held constant, test scores and rankings of the minor factors vary somewhat from run to run, so relative rankings may shift slightly. In general, however, taking out the Loan Amount and more minor factors decreased the scores.<br>
+                  </p>                                
+            </div>
+            <table class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">Random Forest</th>
+                    <th scope="col">Estimators</th>                                       
+                    <th scope="col">Training score</th>
+                    <th scope="col">Training score (oob sampling)</th>    
+                    <th scope="col">Test score</th>  
+                    <th scope="col">Factors dropped</th> 
+                    <th scope="col">Income term(s)used</th>                                        
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1a</th>
+                    <td>200</td>
+                    <td>1.0</td>
+                    <td>0.751</td>  
+                    <td><strong>0.730</strong></td>
+                    <td>None</td>
+                    <td>Total Income</td>
+                </tr>
+                <tr>
+                    <th scope="row">1b</th>
+                    <td>200</td>
+                    <td>1.0</td>
+                    <td>0.746</td>  
+                    <td><strong>0.730</strong></td>
+                    <td>None</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr>
+                <tr>
+                    <th scope="row">1c</th>
+                    <td>200</td>
+                    <td>1.0</td>
+                    <td>0.751</td>  
+                    <td><strong>0.730</strong></td>
+                    <td>None</td>
+                    <td>log(Total Income)</td>
+                </tr>                
+                <tr>
+                    <th scope="row">2a</th>
+                    <td>200</td>
+                    <td>1.0</td>
+                    <td>0.751</td>  
+                    <td><strong>0.723</strong></td>
+                    <td>Loan Amount Term</td>
+                    <td>Total Income</td>
+                </tr>
+                <tr>
+                    <th scope="row">2b</th>
+                    <td>200</td>
+                    <td>1.0</td>
+                    <td>0.729</td>  
+                    <td><strong><h4>0.737</h4></strong></td>
+                    <td>Loan Amount Term</td>
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr>  
+                    <th scope="row">2c</th>
+                    <td>200</td>
+                    <td>1.0</td>
+                    <td>0.746</td>  
+                    <td><strong>0.730</strong></td>
+                    <td>Loan Amount Term</td>
+                    <td>log(Total Income)</td>
+                </tr>                  
+                <tr>
+                    <th scope="row">3a</th>
+                    <td>200</td>
+                    <td>0.995</td>
+                    <td>0.704</td>  
+                    <td><strong>0.680</strong></td>
+                    <td>Loan Amount Term, Loan Amount</td>
+                    <td>Total Income</td>
+                </tr>                
+                <tr>
+                    <th scope="row">3b</th>
+                    <td>200</td>
+                    <td>0.995</td>
+                    <td>0.723</td>  
+                    <td><strong>0.702</strong></td>
+                    <td>Loan Amount Term, Loan Amount</td> 
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr> 
+                <tr>
+                    <th scope="row">3c</th>
+                    <td>200</td>
+                    <td>0.713</td>
+                    <td>0.667</td>  
+                    <td><strong>0.716</strong></td>
+                    <td>Loan Amount Term, Loan Amount</td> 
+                    <td>log(Total Income)</td>
+                </tr> 
+                <tr>
+                    <th scope="row">4a</th>
+                    <td>200</td>
+                    <td>0.995</td>
+                    <td>0.702</td>  
+                    <td><strong>0.702</strong></td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                    <td>Total Income</td>
+                </tr>                
+                <tr>
+                    <th scope="row">4b</th>
+                    <td>200</td>
+                    <td>0.995</td>
+                    <td>0.687</td>  
+                    <td><strong>0.709</strong></td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td> 
+                    <td>Applicant Income, Co-Applicant Income</td>
+                </tr>                                                               
+                <tr>
+                    <th scope="row">4c</th>
+                    <td>200</td>
+                    <td>0.995</td>
+                    <td>0.674</td>  
+                    <td><strong>0.681</strong></td>
+                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td> 
+                    <td>log(Total Income)</td>
+                </tr>                                                                               
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Random forest factor contributions</h5>
+            </div>
+            <div class="col-md-12">
+                <h5>A) Total income</h5>
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_1a.png" width="100%" </img>
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_2a.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_3a.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_4a.png"  width="100%"</img>
+            </div>
+        </div>  
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row"> <pre>&#9</pre></div>  
+                <h5>B) Applicant and Co-Applicant Income separate</h5>            
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_1b.png" width="100%" </img>
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_2b.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+                <h6></h6>
+                <img src="../static/images/RF_3b.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+                <h6></h6>
+                <img src="../static/images/RF_4b.png"  width="100%"</img>
+            </div>
+        </div> 
+           
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row"> <pre>&#9</pre></div>
+                <h5>C) log(Total Income)</h5>              
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_1c.png" width="100%" </img>
+            </div>
+            <div class='col-md-3'>
+
+                <img src="../static/images/RF_2c.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+                <h6></h6>
+                <img src="../static/images/RF_3c.png"  width="100%"</img>
+            </div>
+            <div class='col-md-3'>
+                <h6></h6>
+                <img src="../static/images/RF_4c.png"  width="100%"</img>
+            </div>
+        </div>                                        
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

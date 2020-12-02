@@ -24,7 +24,7 @@ edge [fontname=helvetica] ;
 9 -> 10 ;
 11 [label=<gini = 0.193<br/>samples = 83<br/>value = [9, 74]<br/>class = Approved>, fillcolor="#51a9e8"] ;
 9 -> 11 ;
-12 [label=<Property_Area &le; 1.5<br/>gini = 0.375<br/>samples = 4<br/>value = [3, 1]<br/>class = Denied>, fillcolor="#eeab7b"] ;
+12 [label=<Dependents &le; 1.0<br/>gini = 0.375<br/>samples = 4<br/>value = [3, 1]<br/>class = Denied>, fillcolor="#eeab7b"] ;
 8 -> 12 ;
 13 [label=<gini = 0.5<br/>samples = 2<br/>value = [1, 1]<br/>class = Denied>, fillcolor="#ffffff"] ;
 12 -> 13 ;
