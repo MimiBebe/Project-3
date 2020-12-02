@@ -52,49 +52,67 @@
                     <div class="col-md-12">
                         <div class="data-pages">
                             <div class="card-body">
+
+                                <div class="dropdown">
+                                    <button class="dropbtn">Click Here for Other Examples</button>
+                                    <div class="dropdown-content">
+                                        <a href="data.html">Back to Main Page</a>
+                                        <a href="maritalstatus.html">Marital Status</a>
+                                        <a href="credithistory.html">Credit History</a>
+                                        <a href="loanamount.html">Loan Amount</a>
+                                        <a href="gender.html">Gender</a>
+                                    </div>
+                                </div>
+
+                                <!-- Full Page Intro -->
                                 <div class="view">
+                                    <h2>Loan Statistics - Amount Requested</h2>
 
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-md-9">
-                                                <h1>Loan Approval Data</h1>
-                                                <h3>We looked at several different segments to determine which ones are
-                                                    more likely to get a loan. These include:</h3>
+                                            <div class="col-md-6">
 
-                                                <ul>
-                                                    <li>Gender</li>
-                                                    <li>Education</li>
-                                                    <li>Marital Status</li>
-                                                    <li># of Dependents</li>
-                                                    <li>Employment Status</li>
-                                                    <li>Income</li>
-                                                    <li>Loan Amount</li>
-                                                    <li>Loan Term</li>
-                                                    <li>Credit History</li>
-                                                    <li>Property Area (Rural, Semiurban or Urban)</li>
-                                                </ul>
+                                                <img src="../static/images/LoanAmount_Bin_pieStats.png"
+                                                    alt="Loan Requests by Loan Amount" width="400" height="400">
+
                                             </div>
-                                            <div class="col-md-3">
-                                                <div class="dropdown">
-                                                    <button class="dropbtn">Click Here for Segment Example</button>
-                                                    <div class="dropdown-content">
-                                                        <a href="credithistory.html">Credit History</a>
-                                                        <a href="loanamount.html">Loan Amount</a>
-                                                        <a href="gender.html">Gender</a>
-                                                        <a href="education.html">Education</a>
-                                                        <a href="maritalstatus.html">Marital Status</a>
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-6">
+                                                <img src="../static/images/LoanAmount_Bin_barStats.png"
+                                                    alt="Loan Requests by Loan Amount" width="400" height="400">
+
+
+
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- end of content -->
                                 </div>
+
+                                <p>Of all the loan applicants in our model:
+
+                                <ul>
+                                    <li>60% requested a loan amount between $100-$200k</li>
+                                    <li>25.9% requested a loan amount of less than $100k</li>
+                                    <li>11.4% requested a loan amount between $200k-$400k</li>
+                                    <li>2.3% requested a loan amount between $400k-$800k</li>
+                                </ul>
+
+                                As you can see from the loan approval chart, the loan approval % was fairly even across
+                                all loan amounts with the exception of $200k-$400k.<br>
+                                </p>
+
+
+
+
                             </div>
+
+
+                            <!-- end of content -->
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
     </header>
 
 
