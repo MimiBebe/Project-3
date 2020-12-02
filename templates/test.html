@@ -12,6 +12,8 @@
     <!-- Our CSS  -->
     <link rel="stylesheet" href="../static/css/style.css">
 
+    <link rel="stylesheet" href="../static/css/style_data.css">
+
 </head>
 
 <body>
@@ -51,206 +53,56 @@
                         <div class="data-pages">
                             <div class="card-body">
 
-
-
-
-
-                                <a href="#" type="button" class="btn btn-light">Logistic Regression</a>
-                                <a href="k_Nearest_Neighbors.html" type="button" class="btn btn-light">KNeighbors
-                                    Classifier</a>
-                                <a href="decision_trees.html" type="button" class="btn btn-light">Decision Trees</a>
-                                <a href="random_forests.html" type="button" class="btn btn-light">Random Forests</a>
-                                <a href="neural_networks.html" type="button" class="btn btn-light">Neural Networks</a>
-
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h3><strong>KNeighbors Classifier</strong></h3>
-                                            <p class="text-justify">For the KNN model runs, only the factor combinations
-                                                discussed above were tested. <br>
-                                                Train and test scores generally required inclusion of more neighbors to
-                                                converge when fewer factors were included, but there were no strong
-                                                trends in test accuracy scores. </p>
-                                        </div>
-                                        <table class="table table-striped table-bordered table-sm">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Trial</th>
-                                                    <th scope="col">Neighbors tested</th>
-                                                    <th scope="col">Optimal neighbors</th>
-                                                    <th scope="col">Test accuracy</th>
-                                                    <th scope="col">Income(s) considered</th>
-                                                    <th scope="col">Factors dropped</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1a</th>
-                                                    <td>1 - 40</td>
-                                                    <td>5</td>
-                                                    <td><strong>0.752</strong></td>
-                                                    <td>Combined</td>
-                                                    <td>None</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1b</th>
-                                                    <td>1 - 40</td>
-                                                    <td>5</td>
-                                                    <td><strong>
-                                                            <h4>0.766</h4>
-                                                        </strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
-                                                    <td>None</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">1c</th>
-                                                    <td>1 - 40</td>
-                                                    <td>5</td>
-                                                    <td><strong>
-                                                            <h4>0.766</h4>
-                                                        </strong></td>
-                                                    <td>log(Total Income)</td>
-                                                    <td>None</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2a</th>
-                                                    <td>1 - 40</td>
-                                                    <td>5</td>
-                                                    <td><strong>0.752</strong></td>
-                                                    <td>Combined</td>
-                                                    <td>Loan Term</td>
-                                                <tr>
-                                                    <th scope="row">2b</th>
-                                                    <td>1 - 40</td>
-                                                    <td>11</td>
-                                                    <td><strong>0.759</strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
-                                                    <td>Loan Term</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2c</th>
-                                                    <td>1 - 40</td>
-                                                    <td>13</td>
-                                                    <td><strong>
-                                                            <h4>0.766</h4>
-                                                        </strong></td>
-                                                    <td>log(Total Income)</td>
-                                                    <td>Loan Term</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3a</th>
-                                                    <td>1 - 40</td>
-                                                    <td>21</td>
-                                                    <td><strong>0.752</strong></td>
-                                                    <td>Combined</td>
-                                                    <td>Loan Term, Loan Amount</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3b</th>
-                                                    <td>1 - 40</td>
-                                                    <td>21</td>
-                                                    <td><strong>0.759</strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
-                                                    <td>Loan Term, Loan Amount</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3c</th>
-                                                    <td>1 - 40</td>
-                                                    <td>19</td>
-                                                    <td><strong>0.752</strong></td>
-                                                    <td>log(Total Income)</td>
-                                                    <td>Loan Term, Loan Amount</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4a</th>
-                                                    <td>1 - 40</td>
-                                                    <td>17</td>
-                                                    <td><strong>0.745</strong></td>
-                                                    <td>Combined</td>
-                                                    <td>Loan Term, Loan Amount, Gender, Education, Self-employed,
-                                                        Married</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4b</th>
-                                                    <td>1 - 40</td>
-                                                    <td>15</td>
-                                                    <td><strong>0.745</strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
-                                                    <td>Loan Term, Loan Amount, Gender, Education, Self-employed,
-                                                        Married</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4c</th>
-                                                    <td>1 - 40</td>
-                                                    <td>11</td>
-                                                    <td><strong>0.745</strong></td>
-                                                    <td>log (Total Income)</td>
-                                                    <td>Loan Term, Loan Amount, Gender, Education, Self-employed,
-                                                        Married</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <div class="dropdown">
+                                    <button class="dropbtn">Click Here for Other Examples</button>
+                                    <div class="dropdown-content">
+                                        <a href="maritalstatus.html">Marital Status</a>
+                                        <a href="data.html">Back to Main Page</a>
+                                        <a href="credithistory.html">Credit History</a>
+                                        <a href="loanamount.html">Loan Amount</a>
+                                        <a href="gender.html">Gender</a>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h4>Testing accuracy vs. k Neighbors (orange = test, blue = train)</h4>
-                                            <h5>a) Total Income</h5>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_1a.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_2a.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_3a.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_4a.png" width="100%" </img>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h5>b) Applicant and co-applicant income treated separately</h5>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_1b.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_2b.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_3b.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_4b.png" width="100%" </img>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <h5>c) log(Total Income)</h5>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_1c.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_2c.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_3c.png" width="100%" </img>
-                                        </div>
-                                        <div class='col-md-3'>
-                                            <img src="../static/images/KNN_4c.png" width="100%" </img>
-                                        </div>
-                                    </div>
-
                                 </div>
-                                <!-- end of content -->
+
+                                <!-- Full Page Intro -->
+                                <div class="view">
+                                    <h2>Loan Statistics - Education</h2>
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <img src="../static/images/Education_pieStats.png"
+                                                    alt="Loan Requests by Education" width="400" height="400">
+                                            </div>
+                                            <div class="col-md-6">
+
+                                                <img src="../static/images/Education_barStats.png"
+                                                    alt="Loan Requests by Education" width="400" height="400">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Of all the loan applicants in our model, 78.7% graduated from college, while
+                                    21.3%
+                                    did not.<br>
+                                    As you can see from the loan approval chart, loan applicants who had a
+                                    college
+                                    education were approved at a noticably higher rate.<br>
+                                    Typically (but not in all cases) people who graduate from college tend to
+                                    make
+                                    more
+                                    money, which may factor into why the loan approval rate was higher for these
+                                    applicants.</p>
                             </div>
+
+
+                            <!-- end of content -->
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </header>
 
