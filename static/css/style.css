@@ -4,7 +4,9 @@ body {
   font-family: helvetica;
 }
 
-
+td {
+  padding: 0 15px;
+}
 
 /* CSS for multi step form: https://www.w3schools.com/howto/howto_js_form_steps.asp */
 

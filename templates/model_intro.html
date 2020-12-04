@@ -51,32 +51,69 @@
                         <div class="data-pages">
                             <div class="card-body">
                                 <h2><strong>Prediction Model Exploration</strong></h2>
-                                <p class="text-justify">Five types of model were tested: Logistic Regression, KNeighbors Classifier, Decision Trees, Random Forests, 
+                                <p class="text-justify">Five types of model were tested: Logistic Regression, KNeighbors
+                                    Classifier, Decision Trees, Random Forests,
                                     and Neural Networks. <br><br>
                                     Within each, several different factor combinations were tried: <br><br>
-                                    -- Income was treated as Total Income, as separate terms for Applicant and Co-Applicant Income, or as log(Total Income).<br><br>
-                                    -- Because we do not know what Loan Amounts or Loan Terms the applicants in the training dataset requested vs. what they received, and an applicant 
-                                    requesting too large a loan might be denied despite otherwise favorable attributes, some models were tested both with and 
+                                    -- Income was treated as Total Income, as separate terms for Applicant and
+                                    Co-Applicant Income, or as log(Total Income).<br><br>
+                                    -- Because we do not know what Loan Amounts or Loan Terms the applicants in the
+                                    training dataset requested vs. what they received, and an applicant
+                                    requesting too large a loan might be denied despite otherwise favorable attributes,
+                                    some models were tested both with and
                                     without these terms. A log transformation of Loan Amount was also tried.<br><br>
-                                    -- The Random Forest runs found several terms (Gender, Education, Self_Employed, Married) of consistently low importance, 
+                                    -- The Random Forest runs found several terms (Gender, Education, Self_Employed,
+                                    Married) of consistently low importance,
                                     so some of the other models were tested both with and without this set.<br><br>
-                                Factors specific to particular model types were also varied, discussed on their separate pages.<br><br>
-                                Overall, most test accuracies were in the range of 0.7 - 0.8, and income and credit score were the primary deciding factors. The Random Forest method
-                                identifed three sets of variables, in decreasing order of importance: Income, Credit Rating, and Loan Amount; Dependents, Property Area, and Loan Term; and 
-                                Married, Education, Gender, and Self-Employed. Removing these last four from the analysis generally decreased the accuracy of Random Forest and KNN runs,
-                                but increased it for Neural Networks and Decision Trees (not tested on the Logistic Regression model). This may reflect overtraining of some models on the training split.
-                                 <br><br>
-                                The highest accuracies found so far are:<br><br>
-                                &#8194&#8194&#8194&#8194&#8194&#8194 Logistic Regression &#8194&#8194&#8194&#8194&#8194 0.716<br>
-                                &#8194&#8194&#8194&#8194&#8194&#8194 KNeighbors Classifier &#8194&#8194 0.766<br>
-                                &#8194&#8194&#8194&#8194&#8194&#8194 Decision Trees &#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194 0.759<br>
-                                &#8194&#8194&#8194&#8194&#8194&#8194 Random Forests &#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194 0.737<br>
-                                &#8194&#8194&#8194&#8194&#8194&#8194 Neural Networks &#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194&#8194 0.773<br>
-                                <br>Click the links below to see where these numbers came from.<br>
-                                </p>               
+                                    Factors specific to particular model types were also varied, discussed on their
+                                    separate pages.<br><br>
+                                    Overall, most test accuracies were in the range of 0.7 - 0.8, and income and credit
+                                    score were the primary deciding factors. The Random Forest method
+                                    identifed three sets of variables, in decreasing order of importance: Income, Credit
+                                    Rating, and Loan Amount; Dependents, Property Area, and Loan Term; and
+                                    Married, Education, Gender, and Self-Employed. Removing these last four from the
+                                    analysis generally decreased the accuracy of Random Forest and KNN runs,
+                                    but increased it for Neural Networks and Decision Trees (not tested on the Logistic
+                                    Regression model). This may reflect overtraining of some models on the training
+                                    split.
+                                    <br><br>
+                                <h4>The highest accuracies found so far are:</h4>
+                                <table id="table">
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Accuracy</th>
+                                    </tr>
 
-                                <a href="logistic-regression.html" type="button" class="btn btn-info">Logistic Regression</a>
-                                <a href="k_Nearest_Neighbors.html" type="button" class="btn btn-info">KNeighbors Classifier</a>
+                                    <tr>
+                                        <td>Logistic Regression  </td>
+                                        <td>0.716</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KNeighbors Classifier    </td>
+                                        <td>0.766</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Decision Trees</td>
+                                        <td>0.759</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Random Forests</td>
+                                        <td>0.737</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Neural Networks</td>
+                                        <td>0.773</td>
+                                    </tr>
+
+                                </table>
+
+                                <br>Click the links below to see where these numbers came from.<br>
+                                </p>
+
+                                <a href="logistic-regression.html" type="button" class="btn btn-info">Logistic
+                                    Regression</a>
+                                <a href="k_Nearest_Neighbors.html" type="button" class="btn btn-info">KNeighbors
+                                    Classifier</a>
                                 <a href="decision_trees.html" type="button" class="btn btn-info">Decision Trees</a>
                                 <a href="random_forests.html" type="button" class="btn btn-info">Random Forests</a>
                                 <a href="neural_networks.html" type="button" class="btn btn-info">Neural Networks</a>
