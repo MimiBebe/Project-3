@@ -66,83 +66,129 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h3><strong>KNeighbors Classifier</strong></h3>
-                                            <p class="text-justify">For the KNN model runs, only the factor combinations
-                                                discussed above were tested. <br>
-                                                Train and test scores generally required inclusion of more neighbors to
-                                                converge when fewer factors were included, but there were no strong
-                                                trends in test accuracy scores. </p>
+                                            <p class="text-justify"><h4>
+                                                For the KNN model runs, slightly higher accuracy was achieved when
+                                                more factors were included (groups 1 and 2). Convergence of train and test scores generally required more neighbors
+                                                when fewer factors were considered.  <br><br>Logarithmic transformation of the Loan Amount and Total Income variables 
+                                                had little effect. <br><br></h4></p>
                                         </div>
                                         <table class="table table-striped table-bordered table-sm">
                                             <thead>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="col">Trial</th>
                                                     <th scope="col">Neighbors tested</th>
                                                     <th scope="col">Optimal neighbors</th>
                                                     <th scope="col">Test accuracy</th>
-                                                    <th scope="col">Income(s) considered</th>
-                                                    <th scope="col">Factors dropped</th>
+                                                    <th scope="col">Income term(s) used</th>
+                                                    <th scope="col">Factors dropped or transformed</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">1a</th>
                                                     <td>1 - 40</td>
                                                     <td>5</td>
                                                     <td><strong>0.752</strong></td>
-                                                    <td>Combined</td>
+                                                    <td>Total Income</td>
                                                     <td>None</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1b</th>
                                                     <td>1 - 40</td>
                                                     <td>5</td>
-                                                    <td><strong>
-                                                            <h4>0.766</h4>
-                                                        </strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
+                                                    <td><strong><h4>0.766</h4></strong></td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                     <td>None</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1c</th>
                                                     <td>1 - 40</td>
                                                     <td>5</td>
-                                                    <td><strong>
-                                                            <h4>0.766</h4>
-                                                        </strong></td>
+                                                    <td><strong><h4>0.766</h4></strong></td>
                                                     <td>log(Total Income)</td>
                                                     <td>None</td>
                                                 </tr>
+                                                <tr>
+                                                    <th scope="row">1d</th>
+                                                    <td>1 - 40</td>
+                                                    <td>7</td>
+                                                    <td><strong><h4>0.766</h4></strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None dropped; used log(LoanAmount)</td>
+                                                </tr>                                   
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                                                
                                                 <tr>
                                                     <th scope="row">2a</th>
                                                     <td>1 - 40</td>
                                                     <td>5</td>
                                                     <td><strong>0.752</strong></td>
-                                                    <td>Combined</td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Term</td>
                                                 <tr>
                                                     <th scope="row">2b</th>
                                                     <td>1 - 40</td>
                                                     <td>11</td>
                                                     <td><strong>0.759</strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                     <td>Loan Term</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2c</th>
                                                     <td>1 - 40</td>
                                                     <td>13</td>
-                                                    <td><strong>
-                                                            <h4>0.766</h4>
-                                                        </strong></td>
+                                                    <td><strong><h4>0.766</h4></strong></td>
                                                     <td>log(Total Income)</td>
                                                     <td>Loan Term</td>
                                                 </tr>
+                                                <tr>
+                                                    <th scope="row">2d</th>
+                                                    <td>1 - 40</td>
+                                                    <td>19</td>
+                                                    <td><strong>0.752</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>Loan Term; used log(LoanAmount)</td>
+                                                </tr> 
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                                                                      
                                                 <tr>
                                                     <th scope="row">3a</th>
                                                     <td>1 - 40</td>
                                                     <td>21</td>
                                                     <td><strong>0.752</strong></td>
-                                                    <td>Combined</td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Term, Loan Amount</td>
                                                 </tr>
                                                 <tr>
@@ -150,7 +196,7 @@
                                                     <td>1 - 40</td>
                                                     <td>21</td>
                                                     <td><strong>0.759</strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                     <td>Loan Term, Loan Amount</td>
                                                 </tr>
                                                 <tr>
@@ -161,12 +207,21 @@
                                                     <td>log(Total Income)</td>
                                                     <td>Loan Term, Loan Amount</td>
                                                 </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">4a</th>
                                                     <td>1 - 40</td>
                                                     <td>17</td>
                                                     <td><strong>0.745</strong></td>
-                                                    <td>Combined</td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self-employed,
                                                         Married</td>
                                                 </tr>
@@ -175,7 +230,7 @@
                                                     <td>1 - 40</td>
                                                     <td>15</td>
                                                     <td><strong>0.745</strong></td>
-                                                    <td>Applicant and Co-applicant separately</td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self-employed,
                                                         Married</td>
                                                 </tr>
@@ -186,14 +241,23 @@
                                                     <td><strong>0.745</strong></td>
                                                     <td>log (Total Income)</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self-employed,
-                                                        Married</td>
+                                                       Married</td>
                                                 </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h4>Testing accuracy vs. k Neighbors (orange = test, blue = train)</h4>
+                                            <br><br><h4><strong>Testing accuracy vs. k Neighbors</strong> (orange = test, blue = train)</h4>
                                             <h5>a) Total Income</h5>
                                         </div>
                                         <div class='col-md-3'>
@@ -243,7 +307,23 @@
                                             <img src="../static/images/KNN_4c.png" width="100%" </img>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h5>d) log(Total Income), log(LoanAmount)</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <img src="../static/images/KNN_1d.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <img src="../static/images/KNN_2d.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+ 
+                                        </div>
+                                        <div class='col-md-3'>
 
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- end of content -->
                             </div>

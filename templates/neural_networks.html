@@ -71,16 +71,27 @@
                                             <h3><strong>Neural Networks</strong></h3>
                                             <h5><strong>All runs shown used a sequential model with 'adam' optimization,
                                                     run for 60 epochs </strong></h5>
-                                            <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras
-                                                mattis iudicium purus sit amet fermentum. <br>
-                                                Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est
-                                                quasdam res quas ex communi.<br>
-                                                At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium
-                                                totius Galliae in diem certam indicere. <br>
-                                                Cras mattis iudicium purus sit amet fermentum.</p>
+                                            <p class="text-justify"><h4>For the limited number of neural network variables tested, the highest accuracy was 
+                                                achieved when the minor factors identified by the Random Forest method (Gender, Education, Self_Employed, Married)
+                                                were removed and Applicant and Co-Applicant income were treated separately (5b). <br><br>Log transformation of 
+                                                Total Income and/or Loan Amount had no consistent effect. <br><br>Increasing the number of network layers resulted
+                                                in small accuracy decreases (compare set 3 with set 4, and 5 with 6). </h4><br>
+                                            </p>
                                         </div>
                                         <table class="table table-striped table-bordered table-sm">
                                             <thead>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr>                      
                                                 <tr>
                                                     <th scope="col">Run</th>
                                                     <th scope="col">Intermediate layers</th>
@@ -89,9 +100,21 @@
                                                     <th scope="col">Shuffle</th>
                                                     <th scope="col">Loss</th>
                                                     <th scope="col">Accuracy</th>
-                                                    <th scope="col">Factors dropped</th>
                                                     <th scope="col">Income term(s)used</th>
+                                                    <th scope="col">Factors dropped or transformed</th>
                                                 </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr>                      
                                             </thead>
                                             <tbody>
                                                 <tr>
@@ -102,8 +125,8 @@
                                                     <td>True</td>
                                                     <td>0.694</td>
                                                     <td><strong>0.702</strong></td>
-                                                    <td>None</td>
                                                     <td>Total income</td>
+                                                    <td>None</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1b</th>
@@ -111,21 +134,55 @@
                                                     <td>100 units, relu activation</td>
                                                     <td>2 units, softmax activation</td>
                                                     <td>True</td>
-                                                    <td>0.725</td>
-                                                    <td><strong>0.667</strong></td>
-                                                    <td>None</td>
+                                                    <td>0.640</td>
+                                                    <td><strong>0.702</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>None</td>
                                                 </tr>
+                                                <tr>
+                                                    <th scope="row">1c</th>
+                                                    <td>2</td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.673</td>
+                                                    <td><strong>0.695</strong></td>
+                                                    <td>None</td>
+                                                    <td>log(Total income)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">1d</th>
+                                                    <td>2</td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.643</td>
+                                                    <td><strong>0.709</strong></td>
+                                                    <td>log(Total income)</td>
+                                                    <td>None; used log(LoanAmount)</td>
+                                                </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr>                      
                                                 <tr>
                                                     <th scope="row">2a</th>
                                                     <td>2</td>
                                                     <td>100 units, relu activation</td>
                                                     <td>2 units, softmax activation</td>
                                                     <td>True</td>
-                                                    <td>0.664</td>
-                                                    <td><strong>0.688</strong></td>
+                                                    <td>0.665</td>
+                                                    <td><strong>0.695</strong></td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Amount Term</td>
-                                                    <td>Total income</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2b</th>
@@ -133,23 +190,55 @@
                                                     <td>100 units, relu activation</td>
                                                     <td>2 units, softmax activation</td>
                                                     <td>True</td>
-                                                    <td>0.672</td>
-                                                    <td><strong>0.702</strong></td>
-                                                    <td>Loan Amount Term</td>
+                                                    <td>0.723</td>
+                                                    <td><strong>0.674</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Amount Term</td>
                                                 </tr>
-
-
+                                                <tr>
+                                                    <th scope="row">2c</th>
+                                                    <td>2</td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.682</td>
+                                                    <td><strong>0.716</strong></td>
+                                                    <td>log(Total income)</td>
+                                                    <td>Loan Amount Term</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2d</th>
+                                                    <td>2</td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.704</td>
+                                                    <td><strong>0.681</strong></td>
+                                                    <td>log(Total income)</td>
+                                                    <td>Loan Amount Term; used log(Loan Amount</td>
+                                                </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr>                      
                                                 <tr>
                                                     <th scope="row">3a</th>
                                                     <td>2</td>
                                                     <td>100 units, relu activation</td>
                                                     <td>2 units, softmax activation</td>
                                                     <td>True</td>
-                                                    <td>0.640</td>
-                                                    <td><strong>0.695</strong></td>
+                                                    <td>0.619</td>
+                                                    <td><strong>0.688</strong></td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Amount Term, Loan Amount</td>
-                                                    <td>Total income</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3b</th>
@@ -157,36 +246,169 @@
                                                     <td>100 units, relu activation</td>
                                                     <td>2 units, softmax activation</td>
                                                     <td>True</td>
-                                                    <td>0.788</td>
-                                                    <td><strong>0.667</strong></td>
-                                                    <td>Loan Amount Term, Loan Amount</td>
+                                                    <td>0.689</td>
+                                                    <td><strong>0.659</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Amount Term, Loan Amount</td>
                                                 </tr>
-
                                                 <tr>
-                                                    <th scope="row">4a</th>
-                                                    <td>3</td>
+                                                    <th scope="row">3c</th>
+                                                    <td>2</td>
                                                     <td>100 units, relu activation</td>
                                                     <td>2 units, softmax activation</td>
                                                     <td>True</td>
-                                                    <td>1.000</td>
-                                                    <td><strong>0.645</strong></td>
+                                                    <td>0.651</td>
+                                                    <td><strong>0.723</strong></td>
+                                                    <td>log(TotalIncome)</td>
                                                     <td>Loan Amount Term, Loan Amount</td>
-                                                    <td>Total income</td>
+                                                </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr>                      
+                                                <tr>
+                                                    <th scope="row">4a</th>
+                                                    <td><h5>3</h5></td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>1.051</td>
+                                                    <td><strong>0.667</strong></td>
+                                                    <td>Total Income</td>
+                                                    <td>Loan Amount Term, Loan Amount</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">4b</th>
-                                                    <td>3</td>
+                                                    <td><h5>3</h5></td>
                                                     <td>100 units, relu activation</td>
                                                     <td>2 units, softmax activation</td>
                                                     <td>True</td>
-                                                    <td>0.891</td>
-                                                    <td><strong>0.645</strong></td>
-                                                    <td>Loan Amount Term, Loan Amount</td>
+                                                    <td>1.112</td>
+                                                    <td><strong>0.667</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Amount Term, Loan Amount</td>
                                                 </tr>
-
-
+                                                <tr>
+                                                    <th scope="row">4c</th>
+                                                    <td><h5>3</h5></td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>1.091</td>
+                                                    <td><strong>0.667</strong></td>
+                                                    <td>log(TotalIncome)</td>
+                                                    <td>Loan Amount Term, Loan Amount</td>
+                                                </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr> 
+                                                <tr>
+                                                    <th scope="row">5a</th>
+                                                    <td>2</td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.547</td>
+                                                    <td><strong>0.752</strong></td>
+                                                    <td>Total Income</td>
+                                                    <td>Loan Amount Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5b</th>
+                                                    <td>2</td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.563</td>
+                                                    <td><strong><h4>0.773</h4></strong></td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Amount Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5c</th>
+                                                    <td>2</td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.542</td>
+                                                    <td><strong>0.759</strong></td>
+                                                    <td>log(TotalIncome)</td>
+                                                    <td>Loan Amount Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr>                                                 
+                                                <tr>
+                                                    <th scope="row">6a</th>
+                                                    <td><h5>3</h5></td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.599</td>
+                                                    <td><strong>0.730</strong></td>
+                                                    <td>Total Income</td>
+                                                    <td>Loan Amount Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6b</th>
+                                                    <td><h5>3</h5></td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.619</td>
+                                                    <td><strong>0.752</strong></td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Amount Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6c</th>
+                                                    <td><h5>3</h5></td>
+                                                    <td>100 units, relu activation</td>
+                                                    <td>2 units, softmax activation</td>
+                                                    <td>True</td>
+                                                    <td>0.518</td>
+                                                    <td><strong>0.745</strong></td>
+                                                    <td>log(TotalIncome)</td>
+                                                    <td>Loan Amount Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td> 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                     
+                                                </tr>                                                                          
                                             </tbody>
                                         </table>
                                     </div>

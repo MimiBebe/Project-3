@@ -74,145 +74,224 @@
                                                 <pre>&#9</pre>
                                             </div>
                                             <h3><strong>Random Forests</strong></h3>
-                                            <p class="text-justify">For the random forests shown here, only the data
-                                                factors were varied, as discussed above.<br>
-                                                Although the random state was held constant, test scores and rankings of
-                                                the minor factors vary somewhat from run to run, so relative rankings
-                                                may shift slightly. In general, however, taking out the Loan Amount and
-                                                more minor factors decreased the scores.<br>
-                                            </p>
+                                            <p class="text-justify"><h4>
+                                                Income (green in bar graphs), whether as Total Income, Applicant Income alone, 
+                                                or log(Total Income), was the highest-ranked factor in all Random Forests tested. Loan Amount (blue) and Credit Ranking (red)
+                                                were the other high-ranked factors.<br><br>Dependents, Property Area, and (where included) Loan 
+                                                Amount Term formed a second-ranking group (light gray), followed by Married, Education, 
+                                                Gender, and Self-Employed (dark gray) as minor players.<br><br>
+                                                
+                                                Test scores and factor rankings vary somewhat from run to run, so relative rankings
+                                                may shift slightly. In general, however, taking out the Loan Amount and more minor 
+                                                factors decreases accuracy. Log transformations of Total Income and Loan Amount had little effect. <br>
+                                                <br></h4></p>
                                         </div>
                                         <table class="table table-striped table-bordered table-sm">
                                             <thead>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                    <td></td> 
+                                                </tr>                                                                       
                                                 <tr>
                                                     <th scope="col">Random Forest</th>
                                                     <th scope="col">Estimators</th>
                                                     <th scope="col">Training score</th>
                                                     <th scope="col">Training score (oob sampling)</th>
                                                     <th scope="col">Test score</th>
-                                                    <th scope="col">Factors dropped</th>
                                                     <th scope="col">Income term(s)used</th>
+                                                    <th scope="col">Other factors dropped or transformed</th>                                                   
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                    <td></td> 
+                                                </tr>                 
                                                 <tr>
                                                     <th scope="row">1a</th>
                                                     <td>200</td>
                                                     <td>1.0</td>
-                                                    <td>0.751</td>
-                                                    <td><strong>0.730</strong></td>
-                                                    <td>None</td>
+                                                    <td>0.753</td>
+                                                    <td><strong><h4>0.737</h4></strong></td>
                                                     <td>Total Income</td>
+                                                    <td>None</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1b</th>
                                                     <td>200</td>
                                                     <td>1.0</td>
-                                                    <td>0.746</td>
-                                                    <td><strong>0.730</strong></td>
-                                                    <td>None</td>
+                                                    <td>0.765</td>
+                                                    <td><strong>0.716</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>None</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1c</th>
                                                     <td>200</td>
                                                     <td>1.0</td>
-                                                    <td>0.751</td>
+                                                    <td>0.758</td>
                                                     <td><strong>0.730</strong></td>
-                                                    <td>None</td>
                                                     <td>log(Total Income)</td>
+                                                    <td>None</td>
                                                 </tr>
+                                                <tr>
+                                                    <th scope="row">1d</th>
+                                                    <td>200</td>
+                                                    <td>1.0</td>
+                                                    <td>0.749</td>
+                                                    <td><strong>0.716</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None dropped; used log(LoanAmount)</td>
+                                                </tr>  
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                    <td></td> 
+                                                </tr>                                                               
                                                 <tr>
                                                     <th scope="row">2a</th>
                                                     <td>200</td>
                                                     <td>1.0</td>
-                                                    <td>0.751</td>
-                                                    <td><strong>0.723</strong></td>
-                                                    <td>Loan Amount Term</td>
+                                                    <td>0.746</td>
+                                                    <td><strong><h4>0.737</h4></strong></td>
                                                     <td>Total Income</td>
+                                                    <td>Loan Amount Term</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2b</th>
                                                     <td>200</td>
                                                     <td>1.0</td>
-                                                    <td>0.729</td>
-                                                    <td><strong>
-                                                            <h4>0.737</h4>
-                                                        </strong></td>
-                                                    <td>Loan Amount Term</td>
+                                                    <td>0.727</td>
+                                                    <td><strong>0.730</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Amount Term</td>
                                                 </tr>
                                                 <th scope="row">2c</th>
-                                                <td>200</td>
-                                                <td>1.0</td>
-                                                <td>0.746</td>
-                                                <td><strong>0.730</strong></td>
-                                                <td>Loan Amount Term</td>
-                                                <td>log(Total Income)</td>
+                                                    <td>200</td>
+                                                    <td>1.0</td>
+                                                    <td>0.753</td>
+                                                    <td><strong>0.723</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>Loan Amount Term</td>
                                                 </tr>
+                                                <th scope="row">2d</th>
+                                                    <td>200</td>
+                                                    <td>1.0</td>
+                                                    <td>0.742</td>
+                                                    <td><strong><h4>0.737</h4></strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>Loan Amount Term; used log(LoanAmount)</td>
+                                                </tr> 
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                    <td></td> 
+                                                </tr>                                                                
                                                 <tr>
                                                     <th scope="row">3a</th>
                                                     <td>200</td>
                                                     <td>0.995</td>
-                                                    <td>0.704</td>
-                                                    <td><strong>0.680</strong></td>
-                                                    <td>Loan Amount Term, Loan Amount</td>
+                                                    <td>0.694</td>
+                                                    <td><strong>0.681</strong></td>
                                                     <td>Total Income</td>
+                                                    <td>Loan Amount Term, Loan Amount</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3b</th>
                                                     <td>200</td>
                                                     <td>0.995</td>
-                                                    <td>0.723</td>
-                                                    <td><strong>0.702</strong></td>
-                                                    <td>Loan Amount Term, Loan Amount</td>
+                                                    <td>0.713</td>
+                                                    <td><strong>0.709</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Amount Term, Loan Amount</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3c</th>
                                                     <td>200</td>
-                                                    <td>0.713</td>
-                                                    <td>0.667</td>
-                                                    <td><strong>0.716</strong></td>
-                                                    <td>Loan Amount Term, Loan Amount</td>
+                                                    <td>0.995</td>
+                                                    <td>0.692</td>
+                                                    <td><strong>0.667</strong></td>
                                                     <td>log(Total Income)</td>
+                                                    <td>Loan Amount Term, Loan Amount</td>
                                                 </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                    <td></td> 
+                                                </tr>                 
                                                 <tr>
                                                     <th scope="row">4a</th>
                                                     <td>200</td>
                                                     <td>0.995</td>
-                                                    <td>0.702</td>
+                                                    <td>0.675</td>
                                                     <td><strong>0.702</strong></td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
-                                                    <td>Total Income</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">4b</th>
                                                     <td>200</td>
                                                     <td>0.995</td>
-                                                    <td>0.687</td>
-                                                    <td><strong>0.709</strong></td>
+                                                    <td>0.682</td>
+                                                    <td><strong>0.730</strong></td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
-                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">4c</th>
                                                     <td>200</td>
                                                     <td>0.995</td>
-                                                    <td>0.674</td>
+                                                    <td>0.675</td>
                                                     <td><strong>0.681</strong></td>
+                                                    <td>log(Total Income)</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
-                                                    <td>log(Total Income)</td>
                                                 </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                    <td></td> 
+                                                </tr>                 
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h5>Random forest factor contributions</h5>
+                                            <h4><strong>Random forest factor contributions</strong></h4>
                                         </div>
                                         <div class="col-md-12">
                                             <h5>A) Total income</h5>
@@ -282,6 +361,26 @@
                                         <div class='col-md-3'>
                                             <h6></h6>
                                             <img src="../static/images/RF_4c.png" width="100%" </img>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <pre>&#9</pre>
+                                            </div>
+                                            <h5>D) log(Total Income); used log(LoanAmount)</h5>
+                                        </div>
+                                        <div class='col-md-3'>
+
+                                            <img src="../static/images/RF_1d.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+
+                                            <img src="../static/images/RF_2d.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                        </div>
+                                        <div class='col-md-3'>
                                         </div>
                                     </div>
                                 </div>

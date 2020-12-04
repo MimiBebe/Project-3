@@ -72,229 +72,366 @@
                                                 <pre>&#9</pre>
                                             </div>
                                             <h3><strong>Decision Trees</strong></h3>
-                                            <p class="text-justify">. <br>
-                                                Higher scores were generally achieved here by limiting tree depth; the
-                                                deeper trees may be
-                                                overtrained. An exception to this
-                                                pattern is seen in Group 5, where a limited tree depth was combined with
-                                                a limited set of data
-                                                factors. In this case tree
-                                                depth had no apparent effect, with most discrimination achieved by the
-                                                Credit History variable in
-                                                the first layer.<br>
-                                            </p>
+                                            <p class="text-justify"><h4>
+                                                For the decision trees, the strongest influence on scores was tree depth: trees with unlimited nodes (group (a))
+                                                scored lowest in all cases. They may be overtrained on the training as opposed to the test split. <br><br>
+
+                                                The highest scores otherwise were found using Total Income or log(Total Income) with a limited
+                                                set of other factors (3b, 3d, 5b, 5d; scores highlighted). Removing the minor factors (as determined 
+                                                by the Random Forest analysis) may reduce the risk of overtraining. <br><br>
+                                                
+                                                There was no difference between runs using Total Income and log(Total Income). Treating
+                                                Applicant and Co-Applicant Income separately (4b, 4c, 4d) resulted in lower scores.<br><br>
+                                            
+                                                Scroll down and zoom in on the images below the table to see how the models made their decisions.
+                                                The top node of each tree is listed in the table; the Gini score is a measure of its contribution 
+                                                to the final result. Here Credit History was the first factor in all cases.<br><br> 
+                                            </h4></p>
                                         </div>
                                         <table class="table table-striped table-bordered table-sm">
                                             <thead>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="col">Decision Tree</th>
                                                     <th scope="col">Maximum depth</th>
                                                     <th scope="col">Test score</th>
-                                                    <th scope="col">Factors dropped</th>
-                                                    <th scope="col">Income term(s)used</th>
+                                                    <th scope="col">Income term(s) used</th>
+                                                    <th scope="col">Factors dropped or transformed</th>
+                                                    <th scope="col">Top node (Gini)</th>                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">1a</th>
                                                     <td>(not set)</td>
-                                                    <td><strong>0.673</strong></td>
-                                                    <td>None</td>
+                                                    <td><strong>0.659</strong></td>
                                                     <td>Total income</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1b</th>
                                                     <td>3</td>
                                                     <td><strong>0.730</strong></td>
-                                                    <td>None</td>
                                                     <td>Total income</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1c</th>
                                                     <td>4</td>
-                                                    <td><strong>0.737</strong></td>
-                                                    <td>None</td>
+                                                    <td><strong>0.744</strong></td>
                                                     <td>Total income</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">1d</th>
                                                     <td>5</td>
-                                                    <td><strong>0.716</strong></td>
-                                                    <td>None</td>
+                                                    <td><strong>0.723</strong></td>
                                                     <td>Total income</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">2a</th>
                                                     <td>(not set)</td>
-                                                    <td><strong>0.589</strong></td>
+                                                    <td><strong>0.603</strong></td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Term, Loan Amount</td>
-                                                    <td>Total Income </td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2b</th>
                                                     <td>3</td>
-                                                    <td><strong>0.752</strong></td>
+                                                    <td><strong>0.751</strong></td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Term, Loan Amount</td>
-                                                    <td>Total Income </td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-                                                <th scope="row">2c</th>
-                                                <td>4</td>
-                                                <td><strong>0.737</strong></td>
-                                                <td>Loan Term, Loan Amount</td>
-                                                <td>Total Income </td>
+                                                <tr>
+                                                    <th scope="row">2c</th>
+                                                    <td>4</td>
+                                                    <td><strong>0.737</strong></td>
+                                                    <td>Total Income</td>
+                                                    <td>Loan Term, Loan Amount</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
+                                                <tr>
+                                                    <th scope="row">2d</th>
+                                                    <td>5</td>
+                                                    <td><strong>0.730</strong></td>
+                                                    <td>Total Income</td>
+                                                    <td>Loan Term, Loan Amount</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-                                                <th scope="row">2d</th>
-                                                <td>5</td>
-                                                <td><strong>0.730</strong></td>
-                                                <td>Loan Term, Loan Amount</td>
-                                                <td>Total Income </td>
-                                                </tr>
-
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">3a</th>
                                                     <td>(not set)</td>
-                                                    <td><strong>0.667</strong></td>
+                                                    <td><strong>0.638</strong></td>
+                                                    <td>Total Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
-                                                    <td>Total Income </td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3b</th>
                                                     <td>3</td>
-                                                    <td><strong>
-                                                            <h4>0.759</h4>
-                                                        </strong></td>
+                                                    <td><strong><h4>0.759</h4></strong></td>                                                       
+                                                    <td>Total Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
-                                                    <td>Total Income </td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-                                                <th scope="row">3c</th>
-                                                <td>4</td>
-                                                <td><strong>0.752</strong></td>
-                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married
-                                                </td>
-                                                <td>Total Income </td>
+                                                    <th scope="row">3c</th>
+                                                    <td>4</td>
+                                                    <td><strong>0.752</strong></td>
+                                                    <td>Total Income</td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 </tr>
-                                                <th scope="row">3d</th>
-                                                <td>5</td>
-                                                <td><strong>
-                                                        <h4>0.759</h4>
-                                                    </strong></td>
-                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married
-                                                </td>
-                                                <td>Total Income </td>
+                                                    <th scope="row">3d</th>
+                                                    <td>5</td>
+                                                    <td><strong><h4>0.759</h4></strong></td>
+                                                    <td>Total Income</td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">4a</th>
                                                     <td>(not set)</td>
-                                                    <td><strong>0.581</strong></td>
+                                                    <td><strong>0.609</strong></td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
-                                                    <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">4b</th>
                                                     <td>3</td>
                                                     <td><strong>0.738</strong></td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
+                                                    <td>Credit History (0.44)</td>
+                                                </tr>
+                                                <tr>                                               
+                                                    <th scope="row">4c</th>
+                                                    <td>4</td>
+                                                    <td><strong>0.723</strong></td>
                                                     <td>Applicant Income, Co-Applicant Income</td>
-                                                </tr>
-                                                <th scope="row">4c</th>
-                                                <td>4</td>
-                                                <td><strong>0.723</strong></td>
-                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married
-                                                </td>
-                                                <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
+                                                        Married</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 </tr>
-                                                <th scope="row">4d</th>
-                                                <td>5</td>
-                                                <td><strong>0.716</strong></td>
-                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married
-                                                </td>
-                                                <td>Applicant Income, Co-Applicant Income</td>
+                                                    <th scope="row">4d</th>
+                                                    <td>5</td>
+                                                    <td><strong>0.716</strong></td>
+                                                    <td>Applicant Income, Co-Applicant Income</td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
+                                                        Married</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">5a</th>
                                                     <td>(not set)</td>
-                                                    <td><strong>0.745</strong></td>
+                                                    <td><strong>0.638</strong></td>
+                                                    <td>log(Total Income)</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
-                                                    <td>log(Total Income)</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">5b</th>
-                                                    <td>1</td>
-                                                    <td><strong>0.745</strong></td>
+                                                    <td>3</td>
+                                                    <td><strong><h4>0.759</h4></strong></td>
+                                                    <td>log(Total Income)</td>
                                                     <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
                                                         Married</td>
+                                                    <td>Credit History (0.44)</td>
+                                                </tr>
+                                                <tr>                                                
+                                                    <th scope="row">5c</th>
+                                                    <td>4</td>
+                                                    <td><strong>0.752</strong></td>
                                                     <td>log(Total Income)</td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
+                                                        Married</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-                                                <th scope="row">5c</th>
-                                                <td>2</td>
-                                                <td><strong>0.745</strong></td>
-                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married
-                                                </td>
-                                                <td>log(Total Income)</td>
+                                                <tr>
+                                                    <th scope="row">5d</th>
+                                                    <td>5</td>
+                                                    <td><strong><h4>0.759</h4></strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>Loan Term, Loan Amount, Gender, Education, Self_Employed,
+                                                        Married</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-                                                </tr>
-                                                <th scope="row">5d</th>
-                                                <td>3</td>
-                                                <td><strong>0.745</strong></td>
-                                                <td>Loan Term, Loan Amount, Gender, Education, Self_Employed, Married
-                                                </td>
-                                                <td>log(Total Income)</td>
-                                                </tr>
-
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
                                                 <tr>
                                                     <th scope="row">6a</th>
                                                     <td>(not set)</td>
                                                     <td><strong>0.674</strong></td>
-                                                    <td>None</td>
                                                     <td>log(Total Income)</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">6b</th>
-                                                    <td>1</td>
+                                                    <td>3</td>
                                                     <td><strong>0.730</strong></td>
-                                                    <td>None</td>
                                                     <td>log(Total Income)</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-                                                <th scope="row">6c</th>
-                                                <td>2</td>
-                                                <td><strong>0.730</strong></td>
-                                                <td>None</td>
-                                                <td>log(Total Income)</td>
+                                                <tr>                                               
+                                                    <th scope="row">6c</th>
+                                                    <td>4</td>
+                                                    <td><strong>0.745</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
+                                                <tr>
+                                                    <th scope="row">6d</th>
+                                                    <td>5</td>
+                                                    <td><strong>0.723</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-                                                <th scope="row">6d</th>
-                                                <td>3</td>
-                                                <td><strong>0.716</strong></td>
-                                                <td>None</td>
-                                                <td>log(Total Income)</td>
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                       
+                                                <tr>
+                                                    <th scope="row">7a</th>
+                                                    <td>(not set)</td>
+                                                    <td><strong>0.652</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None; used log(Loan Amount)</td>
+                                                    <td>Credit History (0.44)</td>
                                                 </tr>
-
-                                            </tbody>
+                                                <tr>
+                                                    <th scope="row">7b</th>
+                                                    <td>3</td>
+                                                    <td><strong>0.730</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None; used log(Loan Amount)</td>
+                                                    <td>Credit History (0.44)</td>
+                                                </tr>
+                                                <tr>                                               
+                                                    <th scope="row">7c</th>
+                                                    <td>4</td>
+                                                    <td><strong>0.737</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None; used log(Loan Amount)</td>
+                                                    <td>Credit History (0.44)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">7d</th>
+                                                    <td>5</td>
+                                                    <td><strong>0.723</strong></td>
+                                                    <td>log(Total Income)</td>
+                                                    <td>None; used log(Loan Amount)</td>
+                                                    <td>Credit History (0.44)</td>
+                                                </tr>  
+                                                <tr class="table-info">
+                                                    <th scope="row"></th>
+                                                    <td></td>
+                                                    <td</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>                                                    
+                                                </tr>                                                                     
+                                           </tbody>
                                         </table>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h4>Decision tree paths (orange = denied, blue = approved)</h4>
+                                            <h4><strong>Decision tree paths</strong></h4>
+                                            <h5>Orange = denied, Blue = approved<br>
+                                                Left branch = "True", Right branch = "False"</h5>
                                         </div>
                                         <div class="row">
                                             <pre>&#9</pre>
                                         </div>
                                         <div class="col-md-12">
                                             <h5>1. Total Income </h5>
-                                            <h5>&emsp;All factors</h5>
+                                            <h5><div style="padding-left:1.00em;">All factors</div></h5>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;"> a) Test score 0.673</h6>
+                                            <h6 style="text-align:center;"> a) Test score 0.659</h6>
                                             <img src="../static/images/Decision_tree_1a.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
@@ -302,11 +439,11 @@
                                             <img src="../static/images/Decision_tree_1b.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">c) Test score 0.737</h6>
+                                            <h6 style="text-align:center;">c) Test score 0.744</h6>
                                             <img src="../static/images/Decision_tree_1c.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">d) Test score 0.716</h6>
+                                            <h6 style="text-align:center;">d) Test score 0.723</h6>
                                             <img src="../static/images/Decision_tree_1d.png" width="100%" </img>
                                         </div>
                                     </div>
@@ -319,14 +456,14 @@
                                         </div>
                                         <div class="col-md-12">
                                             <h5>2. Total income</h5>
-                                            <h5>&emsp;Loan Term and Loan Amount removed</h5>
+                                            <h5><div style="padding-left:1.00em;">Loan Term and Loan Amount removed</div></h5>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">a) Test score 0.589</h6>
+                                            <h6 style="text-align:center;">a) Test score 0.603</h6>
                                             <img src="../static/images/Decision_tree_2a.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">b) Test score 0.752</h6>
+                                            <h6 style="text-align:center;">b) Test score 0.751</h6>
                                             <img src="../static/images/Decision_tree_2b.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
@@ -348,11 +485,11 @@
                                         </div>
                                         <div class="col-md-12">
                                             <h5>3. Total income</h5>
-                                            <h5>&emsp;Loan Term, Loan Amount, Gender, Education, Self_Employed, and
-                                                Married removed</h5>
+                                            <h5><div style="padding-left:1.00em;">Loan Term, Loan Amount, Gender, Education, Self_Employed, and
+                                                Married removed</div></h5>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">a) Test score 0.667</h6>
+                                            <h6 style="text-align:center;">a) Test score 0.638</h6>
                                             <img src="../static/images/Decision_tree_3a.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
@@ -378,11 +515,11 @@
                                         </div>
                                         <div class="col-md-12">
                                             <h5>4. Applicant and Co-Applicant incomes separate</h5>
-                                            <h5>&emsp;Loan Term, Loan Amount, Gender, Education, Self_Employed, and
-                                                Married removed</h5>
+                                            <h5><div style="padding-left:1.00em;">Loan Term, Loan Amount, Gender, Education, Self_Employed, and
+                                                Married removed</div></h5>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">a) Test score 0.581</h6>
+                                            <h6 style="text-align:center;">a) Test score 0.609</h6>
                                             <img src="../static/images/Decision_tree_4a.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
@@ -409,23 +546,23 @@
                                         </div>
                                         <div class="col-md-12">
                                             <h5>5. log(Total Income)</h5>
-                                            <h5>&emsp;Loan Term, Loan Amount, Gender, Education, Self_Employed, and
-                                                Married removed</h5>
+                                            <h5><div style="padding-left:1.00em;">Loan Term, Loan Amount, Gender, Education, Self_Employed, and
+                                                Married removed</div></h5>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">a) Test score 0.745</h6>
+                                            <h6 style="text-align:center;">a) Test score 0.638</h6>
                                             <img src="../static/images/Decision_tree_5a.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">b) Test score 0.745</h6>
+                                            <h4 style="text-align:center;">b) Test score 0.759</h4>
                                             <img src="../static/images/Decision_tree_5b.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">c) Test score 0.745</h6>
+                                            <h6 style="text-align:center;">c) Test score 0.752</h6>
                                             <img src="../static/images/Decision_tree_5c.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">d) Test score 0.745</h6>
+                                            <h4 style="text-align:center;">d) Test score 0.759</h4>
                                             <img src="../static/images/Decision_tree_5d.png" width="100%" </img>
                                         </div>
                                     </div>
@@ -439,7 +576,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <h5>6. log(Total Income)</h5>
-                                            <h5>&emsp;All factors</h5>
+                                            <h5><div style="padding-left:1.00em;">All factors</div></h5>
                                         </div>
                                         <div class='col-md-3'>
                                             <h6 style="text-align:center;">a) Test score 0.674</h6>
@@ -450,14 +587,42 @@
                                             <img src="../static/images/Decision_tree_6b.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">c) Test score 0.730</h6>
+                                            <h6 style="text-align:center;">c) Test score 0.745</h6>
                                             <img src="../static/images/Decision_tree_6c.png" width="100%" </img>
                                         </div>
                                         <div class='col-md-3'>
-                                            <h6 style="text-align:center;">d) Test score 0.716</h6>
+                                            <h6 style="text-align:center;">d) Test score 0.723</h6>
                                             <img src="../static/images/Decision_tree_6d.png" width="100%" </img>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <pre>&#9</pre>
+                                    </div>                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6> </h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>7. log(Total Income)</h5>
+                                            <h5><div style="padding-left:1.00em;">All factors, used log(Loan Amount)</div></h5>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">a) Test score 0.652</h6>
+                                            <img src="../static/images/Decision_tree_7a.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">b) Test score 0.730</h6>
+                                            <img src="../static/images/Decision_tree_7b.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">c) Test score 0.737</h6>
+                                            <img src="../static/images/Decision_tree_7c.png" width="100%" </img>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <h6 style="text-align:center;">d) Test score 0.723</h6>
+                                            <img src="../static/images/Decision_tree_7d.png" width="100%" </img>
+                                        </div>
+                                    </div>                                    
 
                                 </div>
 
