@@ -50,7 +50,7 @@ edge [fontname=helvetica] ;
 21 -> 23 ;
 24 [label=<TotalIncome &le; 36696.0<br/>gini = 0.444<br/>samples = 6<br/>value = [4, 2]<br/>class = Denied>, fillcolor="#f2c09c"] ;
 16 -> 24 ;
-25 [label=<Dependents &le; 0.5<br/>gini = 0.32<br/>samples = 5<br/>value = [4, 1]<br/>class = Denied>, fillcolor="#eca06a"] ;
+25 [label=<Married &le; 0.5<br/>gini = 0.32<br/>samples = 5<br/>value = [4, 1]<br/>class = Denied>, fillcolor="#eca06a"] ;
 24 -> 25 ;
 26 [label=<gini = 0.444<br/>samples = 3<br/>value = [2, 1]<br/>class = Denied>, fillcolor="#f2c09c"] ;
 25 -> 26 ;

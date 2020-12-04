@@ -6,7 +6,7 @@ edge [fontname=helvetica] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
 2 [label=<gini = 0.0<br/>samples = 2<br/>value = [0, 2]<br/>class = Approved>, fillcolor="#399de5"] ;
 1 -> 2 ;
-3 [label=<LoanAmount &le; 97000.0<br/>gini = 0.399<br/>samples = 98<br/>value = [71, 27]<br/>class = Denied>, fillcolor="#efb184"] ;
+3 [label=<LogLoanAmount &le; 11.482<br/>gini = 0.399<br/>samples = 98<br/>value = [71, 27]<br/>class = Denied>, fillcolor="#efb184"] ;
 1 -> 3 ;
 4 [label=<gini = 0.499<br/>samples = 19<br/>value = [10, 9]<br/>class = Denied>, fillcolor="#fcf2eb"] ;
 3 -> 4 ;
